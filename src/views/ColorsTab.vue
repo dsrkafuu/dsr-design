@@ -1,6 +1,6 @@
 <template>
-  <div class="colors-tab">
-    <div class="color-tabs-light">
+  <div class="tab">
+    <div class="light">
       <ColorGrid
         text="主色"
         code="#8aa2d3"
@@ -26,7 +26,7 @@
       <ColorGrid text="字体色" code="#24292f" font="#fdfdfd" />
       <ColorGrid text="字体反色" code="#fdfdfd" />
     </div>
-    <div class="color-tabs-dark">
+    <div class="dark">
       <ColorGrid
         text="主色"
         code="#8aa2d3"
@@ -67,28 +67,12 @@ export default {
   components: {
     ColorGrid,
   },
-  data() {
-    return {
-      loading: false,
-    };
-  },
-  methods: {
-    handleLoadingClick() {
-      if (this.loading) {
-        return;
-      }
-      this.loading = true;
-      setTimeout(() => {
-        this.loading = false;
-      }, 3000);
-    },
-  },
 };
 </script>
 
 <style scoped lang="scss">
-.color-tabs-light,
-.color-tabs-dark {
+.light,
+.dark {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 24px;
@@ -96,13 +80,13 @@ export default {
   border-radius: $border-radius;
 }
 
-.color-tabs-light {
+.light {
   background-color: $color-bg;
   margin-bottom: 24px;
   box-shadow: $box-shadow;
 }
 
-.color-tabs-dark {
+.dark {
   background-color: $dark-color-bg;
   box-shadow: $dark-box-shadow;
 }

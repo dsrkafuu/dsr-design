@@ -6,4 +6,10 @@
 export default {};
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.not-found {
+  font-size: 18px;
+  text-align: center;
+  padding: 48px;
+}
+</style>

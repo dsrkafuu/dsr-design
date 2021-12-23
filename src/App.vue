@@ -122,12 +122,13 @@ export default {
   background-color: $color-bg;
   box-shadow: $box-shadow;
   user-select: none;
+  height: 72px;
 }
 
 .app {
   flex: 1 1 auto;
   width: 1044px;
-  margin: 0 auto;
-  margin: 24px 0;
+  margin: 24px auto;
+  min-height: calc(100vh - 48px - 72px - 24px * 2);
 }
 </style>
