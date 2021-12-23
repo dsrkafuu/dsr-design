@@ -4,7 +4,7 @@ Design scheme of all DSR projects.
 
 ## Supported Browsers
 
-All of my personal projects only supports **latest version** of Chrome, Edge, Firefox and Safari. Old browsers and are not supported.
+All of my personal projects only supports **latest version** of Chrome, Edge, Firefox and Safari.
 
 ## LICENSE
 
