@@ -2,6 +2,12 @@
 
 Design scheme of all DSR projects.
 
+## Environment Variables
+
+```
+VITE_BASE_URL="/"
+```
+
 ## Supported Browsers
 
 All of my personal projects only supports **latest version** of Chrome, Edge, Firefox and Safari.
