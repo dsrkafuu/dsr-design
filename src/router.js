@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import ColorsTab from './views/ColorsTab.vue';
+import CSSTab from './views/CSSTab.vue';
 import FontsTab from './views/FontsTab.vue';
 import NotFound from './views/NotFound.vue';
 
@@ -10,6 +11,14 @@ export const routes = [
     component: ColorsTab,
     meta: {
       name: '色彩',
+    },
+  },
+  {
+    path: '/css',
+    name: 'CSSTab',
+    component: CSSTab,
+    meta: {
+      name: 'CSS',
     },
   },
   {
