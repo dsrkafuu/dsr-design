@@ -31,7 +31,6 @@
 import JSGrid from '../components/JSGrid.vue';
 
 export default {
-  inject: ['$Prism'],
   components: {
     JSGrid,
   },
@@ -71,7 +70,7 @@ export default {
     };
   },
   async mounted() {
-    this.$Prism.highlightAll();
+    window.Prism.highlightAll();
   },
 };
 </script>
