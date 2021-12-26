@@ -11,7 +11,7 @@
     "url": "https://github.com/dsrkafuu/dsr-design.git"
   },
   "scripts": {
-    "build:package": "sass --load-path=node_modules src/package:package",
+    "build:package": "sass --load-path=node_modules/normalize.css src/package:package",
     "build:website": "vite build",
     "dev": "vite",
     "build": "run-s build:package build:website"
