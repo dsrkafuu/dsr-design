@@ -1,6 +1,7 @@
 import path from 'path';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
+import externalGlobals from 'rollup-plugin-external-globals';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -20,7 +21,13 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      external: ['prismjs'],
+      // external: ['prismjs'],
+      plugins: [
+        // fix rollup unspporting cjs externals
+        externalGlobals({
+          prismjs: 'Prism',
+        }),
+      ],
     },
   },
 });
