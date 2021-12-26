@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import ColorsTab from './views/ColorsTab.vue';
-import VariablesTab from './views/VariablesTab.vue';
+import ResetTab from './views/ResetTab.vue';
 import CodeTab from './views/CodeTab.vue';
+import ToolsTab from './views/ToolsTab.vue';
 import NotFound from './views/NotFound.vue';
 
 export const routes = [
@@ -14,11 +15,11 @@ export const routes = [
     },
   },
   {
-    path: '/variables',
-    name: 'VariablesTab',
-    component: VariablesTab,
+    path: '/reset',
+    name: 'ResetTab',
+    component: ResetTab,
     meta: {
-      name: '变量',
+      name: '重置',
     },
   },
   {
@@ -27,6 +28,14 @@ export const routes = [
     component: CodeTab,
     meta: {
       name: '代码',
+    },
+  },
+  {
+    path: '/tools',
+    name: 'ToolsTab',
+    component: ToolsTab,
+    meta: {
+      name: '工具',
     },
   },
   {

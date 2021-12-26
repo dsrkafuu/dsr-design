@@ -1,5 +1,5 @@
 <template>
-  <JSGrid code="import 'dsr-design/prism.scss'" />
+  <JSGrid code="import 'dsr-design/prism.css'" />
   <div class="light">
     <pre><code class="language-js prism-light">{{ code }}</code></pre>
   </div>

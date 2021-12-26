@@ -1,4 +1,5 @@
 <template>
+  <JSGrid code="import 'dsr-design/reset.css'" />
   <div class="tab tab-font">
     <div class="codes">
       <div class="row" v-for="font of fonts" :key="font.type">
@@ -27,7 +28,12 @@
 </template>
 
 <script>
+import JSGrid from '../components/CodeGrid.vue';
+
 export default {
+  components: {
+    JSGrid,
+  },
   data() {
     return {
       fonts: [
@@ -45,6 +51,11 @@ export default {
         '<link rel="preconnect" crossorigin href="https://fonts.gstatic.com">\n' +
         '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500&family=Noto+Sans+SC:wght@400;500&family=Noto+Sans+JP:wght@400;500&family=Fira+Code:wght@400;500">',
       miscs: [
+        {
+          type: '盒子模型',
+          code: 'box-sizing: border-box;',
+          desc: '避免手动痛苦计算宽度',
+        },
         {
           type: '过渡时长',
           code: 'transition: all 100ms ease;',
