@@ -1,3 +1,5 @@
+// package/variables.scss
+
 $font-cjk: 'Noto Sans SC', 'Noto Sans JP';
 $font-en: Inter, -apple-system, BlinkMacSystemFont;
 $font-mono: 'Fira Code', $font-cjk, monospace;
@@ -6,8 +8,14 @@ $font-body: $font-en, $font-cjk, sans-serif;
 $transition-duration: 100ms;
 $border-radius: 2px;
 $weight-bold: 500;
+$highlight-width: 2px;
 
-// package/styles/color.scss
+$header-height: 60px;
+$footer-height: 48px;
+
+$space-base: 24px;
+
+// package/color.scss
 
 $color-primary: #8aa2d3;
 $color-primary-active: #9db1da;

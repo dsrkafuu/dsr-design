@@ -1,5 +1,4 @@
 <template>
-  <JSGrid code="import 'dsr-design/styles/variables.scss'" />
   <div class="tab tab-font">
     <div class="codes">
       <div class="row" v-for="font of fonts" :key="font.type">
@@ -28,12 +27,7 @@
 </template>
 
 <script>
-import JSGrid from '../components/JSGrid.vue';
-
 export default {
-  components: {
-    JSGrid,
-  },
   data() {
     return {
       fonts: [
@@ -66,6 +60,21 @@ export default {
           code: 'font-weight: 500;',
           desc: '减轻粗体字的模糊不清问题',
         },
+        {
+          type: '高亮条宽度',
+          code: 'border-bottom: 2px solid var(--color-primary);',
+          desc: '激活效果的链接和菜单',
+        },
+        {
+          type: '页眉页脚',
+          code: 'height: 60px; height: 48px;',
+          desc: '实心页眉透明页脚',
+        },
+        {
+          type: '空格大小',
+          code: 'padding: 24px;',
+          desc: '以此为基础步长 4 增减',
+        },
       ],
     };
   },
@@ -84,13 +93,13 @@ export default {
 
 .row {
   display: flex;
-  padding: 22px 24px;
+  padding: 22px $space-base;
   padding-bottom: 0;
   font-size: 16px;
   line-height: 1.5;
 
   &:last-child {
-    padding-bottom: 24px;
+    padding-bottom: $space-base;
   }
 }
 
@@ -107,12 +116,12 @@ export default {
 .google {
   .type {
     font-size: 16px;
-    padding-left: 24px;
+    padding-left: $space-base;
   }
 
   .code {
     font-size: 16px;
-    padding: 24px;
+    padding: $space-base;
     background-color: transparent;
 
     pre {
@@ -127,7 +136,7 @@ export default {
 }
 
 .tab-misc {
-  margin-top: 24px;
+  margin-top: $space-base;
 
   .row:not(:last-child) {
     padding-bottom: 0;

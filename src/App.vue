@@ -1,7 +1,9 @@
 <template>
   <div class="header">
     <div class="nav">
-      <h1>DSRDESIGN</h1>
+      <RouterLink class="title" :to="tabRoutes[0].path">
+        <h1>DSRDESIGN</h1>
+      </RouterLink>
       <nav class="menu">
         <RouterLink
           class="menu-item"
@@ -26,8 +28,23 @@
     <RouterView />
   </div>
   <div class="footer">
-    Copyright &copy; 2021-{{ new Date().getFullYear() }}
-    <a href="https://dsrkafuu.net/" target="_blank" rel="noopener">DSRKafuU</a>
+    <div class="footer-inner">
+      <div class="footer-left">
+        Copyright &copy; 2021-{{ new Date().getFullYear() }} |
+        <a href="https://dsrkafuu.net/" target="_blank" rel="noopener"
+          >DSRKafuU</a
+        >
+      </div>
+      <div class="footer-right">
+        <a
+          href="https://github.com/dsrkafuu/dsr-design"
+          target="_blank"
+          rel="noopener"
+          >DSRDESIGN</a
+        >
+        | Apache-2.0
+      </div>
+    </div>
   </div>
 </template>
 
@@ -80,35 +97,18 @@ export default {
   box-shadow: $box-shadow;
 
   .nav {
-    height: 48px;
+    transform: translateX(-23px);
+    height: $header-height;
     margin: 0 auto;
     width: 1044px;
     display: flex;
     align-items: center;
-    user-select: none;
     padding-left: 1px;
 
-    h1 {
-      line-height: 48px;
-      margin: 0;
-      font-size: 20px;
-      font-weight: $weight-bold;
-      height: 100%;
-      margin-right: 24px;
-    }
-  }
-
-  .menu {
-    height: 48px;
-
-    &-item {
-      font-size: 16px;
-      padding: 0 20px;
-      display: inline-block;
-      height: 48px;
-      line-height: 48px;
+    .title {
       text-decoration: none;
-      transition: background-color $transition-duration ease;
+      padding: 0 $space-base;
+      display: inline-block;
 
       &:hover {
         color: $color-font;
@@ -116,8 +116,43 @@ export default {
       }
     }
 
+    h1 {
+      margin: 0;
+      display: inline-block;
+      line-height: $header-height;
+      font-size: 22px;
+      font-weight: $weight-bold;
+      height: 100%;
+      transition: background-color $transition-duration ease;
+    }
+  }
+
+  .menu {
+    height: $header-height;
+
+    &-item {
+      position: relative;
+      font-size: 16px;
+      padding: 0 $space-base;
+      display: inline-block;
+      height: $header-height;
+      line-height: $header-height;
+      text-decoration: none;
+      transition: background-color $transition-duration ease;
+
+      &:hover {
+        color: $color-font;
+        background-color: $color-transparent-active;
+      }
+
+      &-right {
+        position: absolute;
+        right: -47px;
+      }
+    }
+
     .router-link-active {
-      border-bottom: 2px solid $color-primary;
+      border-bottom: $highlight-width solid $color-primary;
     }
   }
 }
@@ -126,18 +161,32 @@ export default {
   width: 100%;
   min-width: 1044px;
   flex: 0 0 auto;
-  text-align: center;
-  padding: 28px 0;
-  background-color: $color-bg;
-  box-shadow: $box-shadow;
-  user-select: none;
-  height: 72px;
+  height: $footer-height + $space-base;
+  padding-bottom: $space-base;
+
+  &-inner {
+    height: $footer-height;
+    width: 1044px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  a {
+    color: $color-primary;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .app {
   flex: 1 1 auto;
   width: 1044px;
-  margin: 24px auto;
-  min-height: calc(100vh - 48px - 72px - 24px * 2);
+  margin: $space-base auto;
+  min-height: calc(100vh - $header-height - $footer-height - $space-base * 3);
 }
 </style>

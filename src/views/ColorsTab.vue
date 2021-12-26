@@ -1,5 +1,5 @@
 <template>
-  <JSGrid code="import 'dsr-design/styles/color.scss'" />
+  <JSGrid code="import 'dsr-design/color.scss'" />
   <div class="light">
     <ColorGrid text="主色" code="#8aa2d3" activeCode="#9db1da" font="#fdfdfd" />
     <ColorGrid text="透明色" code="transparent" activeCode="#f0f1f3" />
@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import JSGrid from '../components/JSGrid.vue';
+import JSGrid from '../components/CodeGrid.vue';
 import ColorGrid from '../components/ColorGrid.vue';
 
 export default {
@@ -66,14 +66,14 @@ export default {
 .dark {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 24px;
-  padding: 24px;
+  grid-gap: $space-base;
+  padding: $space-base;
   border-radius: $border-radius;
 }
 
 .light {
   background-color: $color-bg;
-  margin-bottom: 24px;
+  margin-bottom: $space-base;
   box-shadow: $box-shadow;
 }
 

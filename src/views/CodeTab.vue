@@ -1,5 +1,5 @@
 <template>
-  <JSGrid code="import 'dsr-design/styles/prism.scss'" />
+  <JSGrid code="import 'dsr-design/prism.scss'" />
   <div class="light">
     <pre><code class="language-js prism-light">{{ code }}</code></pre>
   </div>
@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import JSGrid from '../components/JSGrid.vue';
+import JSGrid from '../components/CodeGrid.vue';
 
 export default {
   components: {
@@ -59,7 +59,7 @@ var Prism = function (_self) {
 <style scoped lang="scss">
 .light,
 .dark {
-  padding: 24px;
+  padding: $space-base;
   border-radius: $border-radius;
 
   pre {
@@ -68,12 +68,13 @@ var Prism = function (_self) {
     padding: 10px 16px;
     border-radius: $border-radius;
     line-height: 1.5;
+    font-size: 16px;
   }
 }
 
 .light {
   background-color: $color-bg;
-  margin-bottom: 24px;
+  margin-bottom: $space-base;
   box-shadow: $box-shadow;
 
   pre {
