@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "dsr-design",
   "version": "1.0.0",
   "description": "Design scheme of all DSR projects.",
@@ -10,18 +11,24 @@
     "url": "https://github.com/dsrkafuu/dsr-design.git"
   },
   "scripts": {
+    "script:genPrism": "node \"./scripts/genPrism.js\"",
     "dev": "vite",
     "build": "vite build"
   },
   "dependencies": {
-    "normalize.css": "^8.0.1",
+    "normalize.css": "~8.0.1",
+    "prismjs": "~1.25.0",
     "vue": "~3.2.26",
     "vue-router": "~4.0.12"
   },
   "devDependencies": {
+    "@types/prismjs": "~1.16.6",
     "@vitejs/plugin-vue": "~2.0.1",
+    "chalk": "^5.0.0",
     "eslint": "~8.5.0",
     "eslint-plugin-vue": "~8.2.0",
+    "fs-extra": "^10.0.0",
+    "glob": "^7.2.0",
     "prettier": "~2.5.1",
     "sass": "~1.45.1",
     "vite": "~2.7.6"

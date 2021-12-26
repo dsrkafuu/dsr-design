@@ -1,3 +1,5 @@
+/* css color variables */
+
 :root {
   --color-primary: #8aa2d3;
   --color-primary-active: #9db1da;
@@ -12,10 +14,8 @@
   --color-font: #24292f;
   --color-font-inverse: #fdfdfd;
   --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
+  @media (prefers-color-scheme: dark) {
     --color-transparent-active: #585c61;
     --color-body: #2f3136;
     --color-bg: #474b51;

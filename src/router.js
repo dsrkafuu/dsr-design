@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import ColorsTab from './views/ColorsTab.vue';
-import CSSTab from './views/CSSTab.vue';
-import FontsTab from './views/FontsTab.vue';
+import VariablesTab from './views/VariablesTab.vue';
+import CodeTab from './views/CodeTab.vue';
 import NotFound from './views/NotFound.vue';
 
 export const routes = [
@@ -14,19 +14,19 @@ export const routes = [
     },
   },
   {
-    path: '/css',
-    name: 'CSSTab',
-    component: CSSTab,
+    path: '/variables',
+    name: 'VariablesTab',
+    component: VariablesTab,
     meta: {
-      name: 'CSS',
+      name: '变量',
     },
   },
   {
-    path: '/fonts',
-    name: 'FontsTab',
-    component: FontsTab,
+    path: '/code',
+    name: 'CodeTab',
+    component: CodeTab,
     meta: {
-      name: '字体',
+      name: '代码',
     },
   },
   {

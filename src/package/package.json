@@ -1,0 +1,20 @@
+{
+  "name": "dsr-design",
+  "version": "1.0.0",
+  "description": "Design package of all DSR projects.",
+  "author": "DSRKafuU <dsrkafuu@outlook.com> (https://dsrkafuu.net)",
+  "license": "Apache-2.0",
+  "homepage": "https://design.dsrkafuu.net",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dsrkafuu/dsr-design.git"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "peerDependencies": {
+    "normalize.css": "~8.0.1",
+    "prismjs": "~1.25.0"
+  }
+}

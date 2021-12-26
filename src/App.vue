@@ -11,6 +11,14 @@
         >
           {{ route.meta.name }}
         </RouterLink>
+        <a
+          class="menu-item menu-item-right"
+          href="https://github.com/dsrkafuu/dsr-design"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub
+        </a>
       </nav>
     </div>
   </div>
@@ -78,6 +86,7 @@ export default {
     display: flex;
     align-items: center;
     user-select: none;
+    padding-left: 1px;
 
     h1 {
       line-height: 48px;

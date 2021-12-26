@@ -1,0 +1,91 @@
+/* custom prism theme */
+
+:root {
+  --color-prism-grey: #93a1a1;
+  --color-prism-blue: #2b83c2;
+  --color-prism-cyan: #7f76b1;
+  --color-prism-entity: #657b83;
+  --color-prism-green: #2aa198;
+  --color-prism-yellow: #ee7800;
+  --color-prism-orange: #e45435;
+
+  @media (prefers-color-scheme: dark) {
+    --color-prism-grey: #93a1a1;
+    --color-prism-blue: #95abd7;
+    --color-prism-cyan: #bab1df;
+    --color-prism-entity: #657b83;
+    --color-prism-green: #8ec298;
+    --color-prism-yellow: #e3c26a;
+    --color-prism-orange: #ee869a;
+  }
+}
+
+pre,
+code {
+  color: inherit;
+  font-weight: inherit;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+  tab-size: 2;
+}
+
+.token {
+  &.important,
+  &.bold {
+    font-weight: 500;
+  }
+  &.italic {
+    font-style: italic;
+  }
+
+  &.comment,
+  &.block-comment,
+  &.prolog,
+  &.doctype,
+  &.cdata {
+    color: var(--color-prism-grey);
+  }
+
+  &.property,
+  &.tag,
+  &.boolean,
+  &.number,
+  &.constant,
+  &.symbol,
+  &.deleted {
+    color: var(--color-prism-blue);
+  }
+
+  &.selector,
+  &.attr-name,
+  &.string,
+  &.char,
+  &.builtin,
+  &.url,
+  &.inserted {
+    color: var(--color-prism-cyan);
+  }
+
+  &.entity {
+    color: var(--color-prism-entity);
+  }
+
+  &.atrule,
+  &.attr-value,
+  &.keyword {
+    color: var(--color-prism-green);
+  }
+
+  &.function,
+  &.class-name {
+    color: var(--color-prism-yellow);
+  }
+
+  &.regex,
+  &.important,
+  &.variable {
+    color: var(--color-prism-orange);
+  }
+}
