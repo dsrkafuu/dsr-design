@@ -3,6 +3,7 @@ import ColorsTab from './views/ColorsTab.vue';
 import ResetTab from './views/ResetTab.vue';
 import CodeTab from './views/CodeTab.vue';
 import ToolsTab from './views/ToolsTab.vue';
+import MarkdownTab from './views/MarkdownTab.vue';
 import NotFound from './views/NotFound.vue';
 
 export const routes = [
@@ -37,6 +38,14 @@ export const routes = [
     component: ToolsTab,
     meta: {
       name: '工具',
+    },
+  },
+  {
+    path: '/markdown',
+    name: 'MarkdownTab',
+    component: MarkdownTab,
+    meta: {
+      name: 'MD',
     },
   },
   {

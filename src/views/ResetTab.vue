@@ -25,12 +25,21 @@
       <div class="desc">{{ misc.desc }}</div>
     </div>
   </div>
+  <div class="tab tab-emoji">
+    <div class="row" v-for="emoji of emojis" :key="emoji.type">
+      <span class="type">{{ emoji.type }}</span>
+      <div class="code">
+        <code>{{ emoji.code }}</code>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 import JSGrid from '../components/CodeGrid.vue';
 
 export default {
+  inject: ['$Prism'],
   components: {
     JSGrid,
   },
@@ -88,10 +97,20 @@ export default {
           desc: '以此为基础步长 4 增减',
         },
       ],
+      emojis: [
+        {
+          type: '脚本 CDN 地址',
+          code: 'https://cdn.jsdelivr.net/npm/twemoji@13.1.0/dist/twemoji.min.js',
+        },
+        {
+          type: '资源 Base 路径',
+          code: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@13.1.0/assets/',
+        },
+      ],
     };
   },
-  async mounted() {
-    window.Prism.highlightAll();
+  mounted() {
+    this.$Prism.highlightAll();
   },
 };
 </script>
@@ -116,7 +135,7 @@ export default {
 }
 
 .type {
-  width: 120px;
+  width: 140px;
 }
 
 .code {
@@ -147,7 +166,8 @@ export default {
   }
 }
 
-.tab-misc {
+.tab-misc,
+.tab-emoji {
   margin-top: $space-base;
 
   .row:not(:last-child) {
