@@ -73,6 +73,12 @@ for (const file of scssFiles) {
   fse.copyFileSync(file, path.join(outDir, path.basename(file)));
 }
 
+// copy readme
+fse.copyFileSync(
+  path.resolve(__dirname, '../README.md'),
+  path.resolve(__dirname, '../package/README.md')
+);
+
 Promise.all(workers)
   .then(() => {
     console.log(
