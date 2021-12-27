@@ -51,14 +51,13 @@ scssFiles.forEach((file) => {
     new Promise((resolve, reject) => {
       try {
         const basename = path.basename(file, '.scss');
-        if (basename === 'variables') {
-          resolve();
+        if (basename !== 'variables') {
+          const res = sass.compile(file, scssConfig);
+          fse.outputFileSync(
+            path.resolve(__dirname, `../package/css/${basename}.css`),
+            res.css
+          );
         }
-        const res = sass.compile(file, scssConfig);
-        fse.outputFileSync(
-          path.resolve(__dirname, `../package/css/${basename}.css`),
-          res.css
-        );
         resolve();
       } catch (e) {
         reject(e);
