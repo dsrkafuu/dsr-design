@@ -1,6 +1,6 @@
 <template>
   <div class="screen-notice">
-    <span class="notice">推荐使用宽度大于 1080 像素的屏幕访问</span>
+    <span class="notice">推荐使用宽度大于 1092 像素的屏幕访问</span>
     <CustomButtonVue @click="handleIgnoreClick" type="primary">
       忽略
     </CustomButtonVue>

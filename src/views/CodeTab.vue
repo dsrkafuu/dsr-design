@@ -60,35 +60,35 @@ var Prism = function (_self) {
 .light,
 .dark {
   padding: $space-base;
-  border-radius: $border-radius;
+  border-radius: $corner-radius;
 
   pre {
     overflow-x: auto;
     margin: 0;
     padding: 10px 16px;
-    border-radius: $border-radius;
+    border-radius: $corner-radius;
     line-height: 1.5;
     font-size: 16px;
   }
 }
 
 .light {
-  background-color: $color-bg;
+  background-color: var(--color-bg);
   margin-bottom: $space-base;
-  box-shadow: $box-shadow;
+  box-shadow: var(--box-shadow);
 
   pre {
-    background-color: $color-body;
+    background-color: var(--color-body);
   }
 }
 
 .dark {
-  color: $dark-color-font;
-  background-color: $dark-color-bg;
-  box-shadow: $dark-box-shadow;
+  color: var(--dark-color-font);
+  background-color: var(--dark-color-bg);
+  box-shadow: var(--dark-box-shadow);
 
   pre {
-    background-color: $dark-color-body;
+    background-color: var(--dark-color-body);
   }
 }
 </style>

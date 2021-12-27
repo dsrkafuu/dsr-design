@@ -88,22 +88,25 @@ export default {
 </script>
 
 <style scoped lang="scss">
+$header-height: 60px;
+$footer-height: 48px;
+
 .header {
   width: 100%;
-  min-width: 1044px;
+  min-width: 1092px;
   flex: 0 0 auto;
   text-align: center;
-  background-color: $color-bg;
-  box-shadow: $box-shadow;
+  background-color: var(--color-bg);
+  box-shadow: var(--box-shadow);
 
   .nav {
-    transform: translateX(-23px);
     height: $header-height;
     margin: 0 auto;
-    width: 1044px;
+    width: 1090px;
     display: flex;
     align-items: center;
     padding-left: 1px;
+    position: relative;
 
     .title {
       text-decoration: none;
@@ -111,8 +114,8 @@ export default {
       display: inline-block;
 
       &:hover {
-        color: $color-font;
-        background-color: $color-transparent-active;
+        color: var(--color-font);
+        background-color: var(--color-transparent-active);
       }
     }
 
@@ -121,7 +124,7 @@ export default {
       display: inline-block;
       line-height: $header-height;
       font-size: 22px;
-      font-weight: $weight-bold;
+      font-weight: $bold-weight;
       height: 100%;
       transition: background-color $transition-duration ease;
     }
@@ -131,7 +134,6 @@ export default {
     height: $header-height;
 
     &-item {
-      position: relative;
       font-size: 16px;
       padding: 0 $space-base;
       display: inline-block;
@@ -141,40 +143,41 @@ export default {
       transition: background-color $transition-duration ease;
 
       &:hover {
-        color: $color-font;
-        background-color: $color-transparent-active;
+        color: var(--color-font);
+        background-color: var(--color-transparent-active);
       }
 
       &-right {
         position: absolute;
-        right: -47px;
+        right: 1px;
       }
     }
 
     .router-link-active {
-      border-bottom: $highlight-width solid $color-primary;
+      border-bottom: $highlight-size solid var(--color-primary);
     }
   }
 }
 
 .footer {
   width: 100%;
-  min-width: 1044px;
+  min-width: 1092px;
   flex: 0 0 auto;
   height: $footer-height + $space-base;
   padding-bottom: $space-base;
 
   &-inner {
     height: $footer-height;
-    width: 1044px;
+    width: 1092px;
     margin: 0 auto;
+    padding: 0 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
   a {
-    color: $color-primary;
+    color: var(--color-primary);
     text-decoration: none;
 
     &:hover {
@@ -185,7 +188,8 @@ export default {
 
 .app {
   flex: 1 1 auto;
-  width: 1044px;
+  width: 1092px;
+  padding: 0 24px;
   margin: $space-base auto;
   min-height: calc(100vh - $header-height - $footer-height - $space-base * 3);
 }

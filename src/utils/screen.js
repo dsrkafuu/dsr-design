@@ -5,6 +5,6 @@ export function geiScreenStatus() {
   return {
     width,
     height,
-    status: width >= 1080,
+    status: width >= 1092,
   };
 }

@@ -73,7 +73,7 @@ export default {
   display: inline-block;
   width: 180px;
   height: 180px;
-  border-radius: $border-radius;
+  border-radius: $corner-radius;
   overflow: hidden;
   z-index: 10;
 
@@ -107,13 +107,13 @@ export default {
   &-code {
     margin-top: 20px;
     font-size: 14px;
-    font-family: $font-mono;
+    font-family: $font-family-mono;
   }
 
   &-active-code {
     margin-top: 16px;
     font-size: 14px;
-    font-family: $font-mono;
+    font-family: $font-family-mono;
   }
 }
 </style>

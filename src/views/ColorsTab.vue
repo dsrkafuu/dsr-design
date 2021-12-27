@@ -68,17 +68,17 @@ export default {
   grid-template-columns: repeat(5, 1fr);
   grid-gap: $space-base;
   padding: $space-base;
-  border-radius: $border-radius;
+  border-radius: $corner-radius;
 }
 
 .light {
-  background-color: $color-bg;
+  background-color: var(--color-bg);
   margin-bottom: $space-base;
-  box-shadow: $box-shadow;
+  box-shadow: var(--box-shadow);
 }
 
 .dark {
-  background-color: $dark-color-bg;
-  box-shadow: $dark-box-shadow;
+  background-color: var(--dark-color-bg);
+  box-shadow: var(--dark-box-shadow);
 }
 </style>

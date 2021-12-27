@@ -20,21 +20,10 @@
   }
 }
 
-pre,
-code {
-  color: inherit;
-  font-weight: inherit;
-}
-
-code[class*='language-'],
-pre[class*='language-'] {
-  tab-size: 2;
-}
-
 .token {
   &.important,
   &.bold {
-    font-weight: 500;
+    font-weight: $bold-weight;
   }
   &.italic {
     font-style: italic;

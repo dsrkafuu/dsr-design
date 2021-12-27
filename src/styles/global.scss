@@ -1,34 +1,27 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+@import '../package/reset';
+@import '../package/colors';
+@import '../package/prism';
+@import './remap';
 
 html,
 body,
 #root {
   height: 100%;
   font-size: 14px;
-  color: $color-font;
-  background-color: $color-body;
-  font-family: $font-body;
-}
-
-pre,
-code {
-  font-family: $font-mono;
+  color: var(--color-font);
+  background-color: var(--color-body);
 }
 
 ::selection {
   color: #ffffff;
-  background-color: $color-primary;
+  background-color: var(--color-primary);
 }
 
 a {
-  color: $color-font;
+  color: var(--color-font);
   transition: color $transition-duration ease;
 
   &:hover {
-    color: $color-primary;
+    color: var(--color-primary);
   }
 }

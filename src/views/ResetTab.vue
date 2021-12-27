@@ -97,9 +97,9 @@ export default {
 
 <style scoped lang="scss">
 .tab {
-  background-color: $color-bg;
-  box-shadow: $box-shadow;
-  border-radius: $border-radius;
+  background-color: var(--color-bg);
+  box-shadow: var(--box-shadow);
+  border-radius: $corner-radius;
 }
 
 .row {
@@ -119,9 +119,9 @@ export default {
 }
 
 .code {
-  background-color: $color-body;
+  background-color: var(--color-body);
   padding: 2px 10px;
-  border-radius: $border-radius;
+  border-radius: $corner-radius;
 }
 
 .google {
@@ -138,9 +138,9 @@ export default {
     pre {
       overflow-x: auto;
       margin: 0;
-      background-color: $color-body;
+      background-color: var(--color-body);
       padding: 10px 16px;
-      border-radius: $border-radius;
+      border-radius: $corner-radius;
       line-height: 1.5;
     }
   }

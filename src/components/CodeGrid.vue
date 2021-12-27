@@ -21,10 +21,10 @@ export default {
 
 <style lang="scss">
 .js-grid {
-  background-color: $color-bg;
+  background-color: var(--color-bg);
   padding: 24px;
-  box-shadow: $box-shadow;
-  border-radius: $border-radius;
+  box-shadow: var(--box-shadow);
+  border-radius: $corner-radius;
   margin-bottom: 24px;
   font-size: 16px;
   text-align: center;
@@ -32,9 +32,9 @@ export default {
   pre {
     overflow-x: auto;
     margin: 0;
-    background-color: $color-body;
+    background-color: var(--color-body);
     padding: 10px 16px;
-    border-radius: $border-radius;
+    border-radius: $corner-radius;
     line-height: 1.5;
   }
 }

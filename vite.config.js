@@ -8,13 +8,14 @@ export default defineConfig({
   plugins: [vue()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      '@': path.resolve(__dirname, './src'),
     },
   },
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import '@/styles/variables.scss';`,
+        includePaths: [path.resolve(__dirname, './node_modules/normalize.css')],
+        additionalData: `@import '@/package/variables';`,
       },
     },
   },

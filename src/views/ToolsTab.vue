@@ -22,19 +22,19 @@ export default {
 <style scoped lang="scss">
 .tab {
   padding: $space-base;
-  border-radius: $border-radius;
-  background-color: $color-bg;
+  border-radius: $corner-radius;
+  background-color: var(--color-bg);
   margin-bottom: $space-base;
-  box-shadow: $box-shadow;
+  box-shadow: var(--box-shadow);
 
   pre {
     overflow-x: auto;
     margin: 0;
     padding: 10px 16px;
-    border-radius: $border-radius;
+    border-radius: $corner-radius;
     line-height: 1.5;
     font-size: 16px;
-    background-color: $color-body;
+    background-color: var(--color-body);
   }
 }
 </style>

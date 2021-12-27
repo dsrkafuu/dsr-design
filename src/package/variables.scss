@@ -1,0 +1,15 @@
+/* basic variables */
+
+$transition-duration: 100ms;
+$corner-radius: 2px;
+$bold-weight: 500;
+$highlight-size: 2px;
+
+$space-base: 24px;
+
+$font-base: 14px;
+
+$font-family-cjk: 'Noto Sans SC', 'Noto Sans JP';
+$font-family-latin: Inter, -apple-system, BlinkMacSystemFont;
+$font-family-body: $font-family-latin, $font-family-cjk, sans-serif;
+$font-family-mono: 'Fira Code', $font-family-cjk, monospace;

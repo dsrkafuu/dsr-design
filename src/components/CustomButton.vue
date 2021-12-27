@@ -39,39 +39,39 @@ export default {
   background-color: transparent;
   cursor: pointer;
   padding: 8px 12px;
-  color: $color-font;
-  border-radius: $border-radius;
+  color: var(--color-font);
+  border-radius: $corner-radius;
   user-select: none;
   transition: background-color $transition-duration ease;
 
   &:hover {
-    background-color: $color-transparent-active;
+    background-color: var(--color-transparent-active);
   }
 
   &-primary {
-    color: $color-font-invert;
-    background-color: $color-primary;
+    color: var(--color-font-invert);
+    background-color: var(--color-primary);
 
     &:hover {
-      background-color: $color-primary-active;
+      background-color: var(--color-primary-active);
     }
   }
 
   &-success {
-    color: $color-font-invert;
-    background-color: $color-success;
+    color: var(--color-font-invert);
+    background-color: var(--color-success);
 
     &:hover {
-      background-color: $color-success-active;
+      background-color: var(--color-success-active);
     }
   }
 
   &-danger {
-    color: $color-font-invert;
-    background-color: $color-danger;
+    color: var(--color-font-invert);
+    background-color: var(--color-danger);
 
     &:hover {
-      background-color: $color-danger-active;
+      background-color: var(--color-danger-active);
     }
   }
 }
