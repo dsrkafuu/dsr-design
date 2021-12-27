@@ -11,7 +11,7 @@
     "url": "https://github.com/dsrkafuu/dsr-design.git"
   },
   "scripts": {
-    "build:package": "node \"./scripts/buildPackage.js\"",
+    "build:package": "node \"./scripts/buildPackage.mjs\"",
     "build:website": "vite build",
     "dev": "vite",
     "build": "run-s build:package build:website"
