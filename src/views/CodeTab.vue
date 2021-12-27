@@ -1,5 +1,5 @@
 <template>
-  <JSGrid code="import 'dsr-design/prism.css'" />
+  <JSGrid code="import 'dsr-design/prism'" />
   <div class="light">
     <pre><code class="language-js prism-light">{{ code }}</code></pre>
   </div>
@@ -10,6 +10,7 @@
 
 <script>
 import JSGrid from '../components/CodeGrid.vue';
+import prism from '../utils/prism.js?raw';
 
 export default {
   components: {
@@ -17,37 +18,7 @@ export default {
   },
   data() {
     return {
-      code: `/// <reference lib="WebWorker"/>
-var _self =
-  typeof window !== 'undefined'
-    ? window // if in browser
-    : typeof WorkerGlobalScope !== 'undefined' &&
-      self instanceof WorkerGlobalScope
-    ? self // if in worker
-    : {}; // if in node js
-/**
- * Prism: Lightweight, robust, elegant syntax highlighting
- * @author Lea Verou <https://lea.verou.me>
- */
-var Prism = function (_self) {
-  // Private helper vars
-  var lang = /(?:^|\\s)lang(?:uage)?-([\\w-]+)(?=\\s|$)/i;
-  var uniqueId = 0;
-  // The grammar object for plaintext
-  var plainTextGrammar = {};
-  var encode = function (tokens) {
-    if (tokens instanceof Token) {
-      return new Token(tokens.type, encode(tokens.content), tokens.alias);
-    } else if (Array.isArray(tokens)) {
-      return tokens.map(encode);
-    } else {
-      return tokens
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/\\u00a0/g, ' ');
-    }
-  };
-};`,
+      code: prism,
     };
   },
   async mounted() {

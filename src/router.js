@@ -8,20 +8,21 @@ import NotFound from './views/NotFound.vue';
 export const routes = [
   {
     path: '/',
-    name: 'ColorsTab',
-    component: ColorsTab,
-    meta: {
-      name: '色彩',
-    },
-  },
-  {
-    path: '/reset',
     name: 'ResetTab',
     component: ResetTab,
     meta: {
       name: '重置',
     },
   },
+  {
+    path: '/colors',
+    name: 'ColorsTab',
+    component: ColorsTab,
+    meta: {
+      name: '色彩',
+    },
+  },
+
   {
     path: '/code',
     name: 'CodeTab',

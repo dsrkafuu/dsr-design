@@ -14,7 +14,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        includePaths: [path.resolve(__dirname, './node_modules/normalize.css')],
+        includePaths: [path.resolve(__dirname, './node_modules')],
         additionalData: `@import '@/package/variables';`,
       },
     },

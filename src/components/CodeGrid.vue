@@ -1,6 +1,6 @@
 <template>
   <div class="js-grid">
-    <pre><code class="language-js prism-light">{{ code }}</code></pre>
+    <pre><code class="language-js prism-light">{{ dispCode }}</code></pre>
   </div>
 </template>
 
@@ -9,8 +9,17 @@ export default {
   inject: ['$Prism'],
   props: {
     code: {
-      type: String,
+      type: [String, Array],
       required: true,
+    },
+  },
+  computed: {
+    dispCode() {
+      if (typeof this.code === 'string') {
+        return this.code;
+      } else {
+        return this.code.join('\n');
+      }
     },
   },
   async mounted() {

@@ -1,5 +1,5 @@
 <template>
-  <JSGrid code="import 'dsr-design/color.css'" />
+  <JSGrid code="import 'dsr-design/color'" />
   <div class="light">
     <ColorGrid text="主色" code="#8aa2d3" activeCode="#9db1da" font="#fdfdfd" />
     <ColorGrid text="透明色" code="transparent" activeCode="#f0f1f3" />

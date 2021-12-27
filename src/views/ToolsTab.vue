@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import genIconIdx from '../utils/genIconIdx.mjs?raw';
+import genIconIdx from '../../scripts/buildPackage.mjs?raw';
 
 export default {
   data() {

@@ -1,5 +1,5 @@
 <template>
-  <JSGrid code="import 'dsr-design/reset.css'" />
+  <JSGrid :code="codes" />
   <div class="tab tab-font">
     <div class="codes">
       <div class="row" v-for="font of fonts" :key="font.type">
@@ -36,6 +36,7 @@ export default {
   },
   data() {
     return {
+      codes: ["import 'dsr-design/variables'", "import 'dsr-design/reset'"],
       fonts: [
         {
           type: '全局字体',
