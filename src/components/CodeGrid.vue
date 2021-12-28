@@ -31,11 +31,11 @@ export default {
 <style lang="scss">
 .js-grid {
   background-color: var(--color-bg);
-  padding: 24px;
+  padding: $space-card;
   box-shadow: var(--box-shadow);
   border-radius: $corner-radius;
-  margin-bottom: 24px;
-  font-size: 16px;
+  margin-bottom: $space-card;
+  font-size: $font-sm;
   text-align: center;
 
   pre {

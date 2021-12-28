@@ -33,19 +33,19 @@ export const routes = [
     },
   },
   {
+    path: '/markdown',
+    name: 'MarkdownTab',
+    component: MarkdownTab,
+    meta: {
+      name: '文章',
+    },
+  },
+  {
     path: '/tools',
     name: 'ToolsTab',
     component: ToolsTab,
     meta: {
       name: '工具',
-    },
-  },
-  {
-    path: '/markdown',
-    name: 'MarkdownTab',
-    component: MarkdownTab,
-    meta: {
-      name: 'MD',
     },
   },
   {

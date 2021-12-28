@@ -1,6 +1,6 @@
 <template>
   <div class="tab">
-    <pre><code class="language-js prism-light">{{ code }}</code></pre>
+    <pre><code class="language-js">{{ code }}</code></pre>
   </div>
 </template>
 
@@ -22,10 +22,10 @@ export default {
 
 <style scoped lang="scss">
 .tab {
-  padding: $space-base;
+  padding: $space-card;
   border-radius: $corner-radius;
   background-color: var(--color-bg);
-  margin-bottom: $space-base;
+  margin-bottom: $space-card;
   box-shadow: var(--box-shadow);
 
   pre {
@@ -34,7 +34,6 @@ export default {
     padding: 10px 16px;
     border-radius: $corner-radius;
     line-height: 1.5;
-    font-size: 16px;
     background-color: var(--color-body);
   }
 }

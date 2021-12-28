@@ -88,12 +88,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
-$header-height: 60px;
+$header-height: 48px;
 $footer-height: 48px;
+$responsive-width: 960px;
 
 .header {
   width: 100%;
-  min-width: 1092px;
+  min-width: $responsive-width;
   flex: 0 0 auto;
   text-align: center;
   background-color: var(--color-bg);
@@ -102,15 +103,14 @@ $footer-height: 48px;
   .nav {
     height: $header-height;
     margin: 0 auto;
-    width: 1090px;
+    width: $responsive-width;
     display: flex;
     align-items: center;
-    padding-left: 1px;
     position: relative;
 
     .title {
       text-decoration: none;
-      padding: 0 $space-base;
+      padding: 0 $space-card;
       display: inline-block;
 
       &:hover {
@@ -123,7 +123,7 @@ $footer-height: 48px;
       margin: 0;
       display: inline-block;
       line-height: $header-height;
-      font-size: 22px;
+      font-size: $font-xl;
       font-weight: $bold-weight;
       height: 100%;
       transition: background-color $transition-duration ease;
@@ -134,8 +134,8 @@ $footer-height: 48px;
     height: $header-height;
 
     &-item {
-      font-size: 16px;
-      padding: 0 $space-base;
+      font-size: $font-sm;
+      padding: 0 $space-card;
       display: inline-block;
       height: $header-height;
       line-height: $header-height;
@@ -149,7 +149,7 @@ $footer-height: 48px;
 
       &-right {
         position: absolute;
-        right: 1px;
+        right: 0;
       }
     }
 
@@ -160,17 +160,18 @@ $footer-height: 48px;
 }
 
 .footer {
+  font-size: $font-xs;
   width: 100%;
-  min-width: 1092px;
+  min-width: $responsive-width;
   flex: 0 0 auto;
-  height: $footer-height + $space-base;
-  padding-bottom: $space-base;
+  height: $footer-height + $space-card;
+  padding-bottom: $space-card;
 
   &-inner {
     height: $footer-height;
-    width: 1092px;
+    width: $responsive-width;
     margin: 0 auto;
-    padding: 0 25px;
+    padding: 0 $space-card;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -188,9 +189,9 @@ $footer-height: 48px;
 
 .app {
   flex: 1 1 auto;
-  width: 1092px;
-  padding: 0 24px;
-  margin: $space-base auto;
-  min-height: calc(100vh - $header-height - $footer-height - $space-base * 3);
+  width: 960px;
+  padding: 0 $space-card;
+  margin: $space-card auto;
+  min-height: calc(100vh - $header-height - $footer-height - $space-card * 3);
 }
 </style>

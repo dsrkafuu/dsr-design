@@ -66,14 +66,14 @@ export default {
 .dark {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: $space-base;
-  padding: $space-base;
+  grid-gap: $space-card;
+  padding: $space-card;
   border-radius: $corner-radius;
 }
 
 .light {
   background-color: var(--color-bg);
-  margin-bottom: $space-base;
+  margin-bottom: $space-card;
   box-shadow: var(--box-shadow);
 }
 

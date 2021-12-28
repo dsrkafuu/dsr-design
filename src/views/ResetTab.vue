@@ -5,14 +5,14 @@
       <div class="row" v-for="font of fonts" :key="font.type">
         <span class="type">{{ font.type }}</span>
         <div class="code">
-          <code class="language-css prism-light">{{ font.code }}</code>
+          <code class="language-css">{{ font.code }}</code>
         </div>
       </div>
     </div>
     <div class="google">
       <span class="type">Google Fonts</span>
       <div class="code">
-        <pre><code class="language-html prism-light">{{ googleFonts }}</code></pre>
+        <pre><code class="language-html">{{ googleFonts }}</code></pre>
       </div>
     </div>
   </div>
@@ -20,7 +20,7 @@
     <div class="row" v-for="misc of miscs" :key="misc.type">
       <span class="type">{{ misc.type }}</span>
       <div class="code">
-        <code class="language-css prism-light">{{ misc.code }}</code>
+        <code class="language-css">{{ misc.code }}</code>
       </div>
       <div class="desc">{{ misc.desc }}</div>
     </div>
@@ -48,12 +48,20 @@ export default {
       codes: ["import 'dsr-design/variables'", "import 'dsr-design/reset'"],
       fonts: [
         {
-          type: '全局字体',
-          code: "Inter, -apple-system, BlinkMacSystemFont, 'Noto Sans SC', 'Noto Sans JP', sans-serif",
+          type: 'CJK 字体',
+          code: "'Noto Sans SC', 'Noto Sans JP', sans-serif",
+        },
+        {
+          type: '拉丁字体',
+          code: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
         },
         {
           type: '等宽字体',
-          code: "'Fira Code', 'Noto Sans SC', 'Noto Sans JP', monospace",
+          code: "'Fira Code', monospace",
+        },
+        {
+          type: '字体大小',
+          code: '10px, 12px, 14px, 16px, 18px, 20px',
         },
       ],
       googleFonts:
@@ -93,8 +101,8 @@ export default {
         },
         {
           type: '空格大小',
-          code: 'padding: 24px;',
-          desc: '以此为基础步长 4 增减',
+          code: 'padding: 20px;',
+          desc: '基础卡片空格',
         },
       ],
       emojis: [
@@ -124,13 +132,12 @@ export default {
 
 .row {
   display: flex;
-  padding: 22px $space-base;
+  padding: $space-card;
   padding-bottom: 0;
-  font-size: 16px;
   line-height: 1.5;
 
   &:last-child {
-    padding-bottom: $space-base;
+    padding-bottom: $space-card;
   }
 }
 
@@ -146,13 +153,11 @@ export default {
 
 .google {
   .type {
-    font-size: 16px;
-    padding-left: $space-base;
+    padding-left: $space-card;
   }
 
   .code {
-    font-size: 16px;
-    padding: $space-base;
+    padding: $space-card;
     background-color: transparent;
 
     pre {
@@ -168,7 +173,7 @@ export default {
 
 .tab-misc,
 .tab-emoji {
-  margin-top: $space-base;
+  margin-top: $space-card;
 
   .row:not(:last-child) {
     padding-bottom: 0;

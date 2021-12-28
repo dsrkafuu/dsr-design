@@ -1,7 +1,7 @@
 <template>
   <JSGrid code="import 'dsr-design/prism'" />
   <div class="light">
-    <pre><code class="language-js prism-light">{{ code }}</code></pre>
+    <pre><code class="language-js">{{ code }}</code></pre>
   </div>
   <div class="dark">
     <pre><code class="language-js prism-dark">{{ code }}</code></pre>
@@ -31,7 +31,7 @@ export default {
 <style scoped lang="scss">
 .light,
 .dark {
-  padding: $space-base;
+  padding: $space-card;
   border-radius: $corner-radius;
 
   pre {
@@ -40,13 +40,12 @@ export default {
     padding: 10px 16px;
     border-radius: $corner-radius;
     line-height: 1.5;
-    font-size: 16px;
   }
 }
 
 .light {
   background-color: var(--color-bg);
-  margin-bottom: $space-base;
+  margin-bottom: $space-card;
   box-shadow: var(--box-shadow);
 
   pre {

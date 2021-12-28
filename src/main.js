@@ -11,7 +11,7 @@ const Prism = window.Prism;
 const markdownit = window.markdownit().use(window.markdownitEmoji);
 markdownit.renderer.rules.emoji = (token, idx) => {
   return window.twemoji.parse(token[idx].content, {
-    base: window.TWEMOJI_BASE,
+    base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@13.1.0/assets/',
   });
 };
 app.provide('$Prism', Prism);

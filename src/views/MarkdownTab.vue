@@ -10,22 +10,25 @@ import JSGrid from '../components/CodeGrid.vue';
 import example from '../utils/example.md?raw';
 
 export default {
-  inject: ['$markdownit'],
+  inject: ['$markdownit', '$Prism'],
   components: {
     JSGrid,
   },
   data() {
     return {
-      html: this.$markdownit.render(example),
+      html: '',
     };
   },
-  mounted() {},
+  mounted() {
+    this.html = this.$markdownit.render(example);
+    this.$Prism.highlightAll();
+  },
 };
 </script>
 
 <style scoped lang="scss">
 .tab {
-  padding: $space-base;
+  padding: $space-card;
   border-radius: $corner-radius;
   background-color: var(--color-bg);
   box-shadow: var(--box-shadow);
