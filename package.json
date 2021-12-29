@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "dsr-design",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Design scheme of all DSR projects.",
   "author": "DSRKafuU <dsrkafuu@outlook.com> (https://dsrkafuu.net)",
   "license": "Apache-2.0",

@@ -105,6 +105,17 @@ Autoconverted link https://github.com/nodeca/pica (enable linkify to see).
 
 ![Dojocat](/images/dojocat.jpg 'The Dojocat')
 
+## Footnotes
+
+Footnote 1 link[^first].
+
+Footnote 2 link[^second].
+
+Duplicated footnote reference[^second].
+
+[^first]: Footnote **can have markup** and multiple paragraphs.
+[^second]: Footnote text.
+
 ## Emojies
 
 The killer feature of `markdown-it` is very effective support of
@@ -120,14 +131,3 @@ See [how to change output](https://github.com/markdown-it/markdown-it-emoji#chan
 
 - 19^th^
 - H~2~O
-
-## Footnotes
-
-Footnote 1 link[^first].
-
-Footnote 2 link[^second].
-
-Duplicated footnote reference[^second].
-
-[^first]: Footnote **can have markup** and multiple paragraphs.
-[^second]: Footnote text.
