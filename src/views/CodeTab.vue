@@ -49,7 +49,7 @@ export default {
   box-shadow: var(--box-shadow);
 
   pre {
-    background-color: var(--color-body);
+    background-color: var(--color-wrapper);
   }
 }
 

@@ -101,18 +101,16 @@ export default {
   &-text {
     user-select: none;
     margin-top: 36px;
-    font-size: $font-md;
+    font-size: $font-lg;
   }
 
   &-code {
     margin-top: 20px;
-    font-size: $font-sm;
     font-family: $font-family-mono;
   }
 
   &-active-code {
     margin-top: 16px;
-    font-size: $font-sm;
     font-family: $font-family-mono;
   }
 }

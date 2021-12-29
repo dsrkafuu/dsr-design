@@ -134,7 +134,6 @@ $responsive-width: 960px;
     height: $header-height;
 
     &-item {
-      font-size: $font-sm;
       padding: 0 $space-card;
       display: inline-block;
       height: $header-height;

@@ -2,6 +2,7 @@
 
 .markdown {
   line-height: 1.5;
+  font-size: $font-md;
   word-wrap: break-word;
 
   a {
@@ -13,23 +14,19 @@
     }
   }
 
-  h1 {
+  h1,
+  h2 {
     font-size: $font-xl;
   }
-
-  h2 {
+  h3 {
     font-size: $font-lg;
   }
-
-  h3 {
+  h4 {
     font-size: $font-md;
   }
-
-  h4 {
+  h5 {
     font-size: $font-sm;
   }
-
-  h5,
   h6 {
     font-size: $font-xs;
   }
@@ -40,6 +37,7 @@
   h4,
   h5,
   h6 {
+    font-weight: $bold-weight;
     margin: $space-para 0;
     color: var(--color-primary);
 
@@ -52,7 +50,6 @@
   & > :first-child {
     margin-top: 0;
   }
-
   & > :last-child {
     margin-bottom: 0;
   }
@@ -75,7 +72,8 @@
 
   ul,
   ol {
-    padding-left: 30px;
+    padding-left: 28px;
+    line-height: 1.75;
   }
 
   ul ul,
@@ -84,46 +82,33 @@
   ol ul {
     margin-top: 0;
     margin-bottom: 0;
-    padding-left: 18px;
+    padding-left: 16px;
   }
 
   li > p {
-    margin-top: 15px;
+    margin: 0;
   }
 
-  li + li {
-    margin-top: 0.3px;
-  }
-
-  dl {
+  hr {
+    height: $highlight-size;
     padding: 0;
-  }
-
-  dl dt {
-    padding: 0;
-    margin-top: 15px;
-    font-size: 15px;
-    font-style: italic;
-    font-weight: 500;
-  }
-
-  dl dd {
-    padding: 0 15px;
-    margin-bottom: 15px;
+    margin: $space-para 0;
+    background-color: var(--color-border);
+    border: none;
   }
 
   kbd,
   :not(pre) code,
   tt {
-    display: inline;
-    font-size: 90%;
-    font-family: $font-family-mono;
-    padding: 0.15px 5px;
-    color: inherit;
-    background-color: var(--color-code);
-    border-radius: $corner-radius;
     word-wrap: break-word;
     word-break: break-all;
+    font-size: $font-sm;
+    display: inline;
+    font-family: $font-family-mono;
+    padding: 2px 6px;
+    color: inherit;
+    background-color: var(--color-wrapper);
+    border-radius: $corner-radius;
     hyphens: none;
 
     br {
@@ -136,57 +121,24 @@
   }
 
   pre {
-    font-size: 90%;
-    font-family: $font-family-mono;
-    background-color: var(--color-code);
-    border-radius: $corner-radius;
     word-wrap: normal;
-    padding: 15px;
-    overflow: auto;
-    line-height: 1.5;
-
-    & > code {
-      padding: 0;
-      margin: 0;
-      font-size: inherit;
-      word-break: normal;
-      white-space: pre;
-      background: transparent;
-      border: 0;
-    }
-
-    code,
-    tt {
-      font-size: inherit;
-      display: inline;
-      max-width: auto;
-      padding: 0;
-      margin: 0;
-      overflow: visible;
-      line-height: inherit;
-      word-wrap: normal;
-      background-color: transparent;
-      border: 0;
-    }
-  }
-
-  hr {
-    height: $highlight-size;
-    padding: 0;
-    margin: 18px 0;
+    font-size: $font-sm;
+    font-family: $font-family-mono;
     background-color: var(--color-wrapper);
-    border: 0;
+    border-radius: $corner-radius;
+    padding: 12px 15px;
+    overflow-x: auto;
   }
 
   blockquote {
     margin-left: 0;
     margin-right: 0;
     margin-top: 0;
-    margin-bottom: 15px;
+    margin-bottom: $space-para;
     padding: 0 15px;
     color: inherit;
     font-size: inherit;
-    border-left: $highlight-size solid var(--color-wrapper);
+    border-left: $highlight-size solid var(--color-border);
 
     & > :first-child {
       margin-top: 0;
@@ -204,7 +156,7 @@
     max-width: 100%;
     overflow: auto;
     border-collapse: collapse;
-    margin-bottom: 15px;
+    margin-bottom: $space-para;
     background-color: transparent;
 
     tr {
@@ -212,19 +164,23 @@
     }
 
     th {
-      font-weight: 500;
+      font-weight: $bold-weight;
     }
 
     th,
     td {
       background-color: transparent;
       padding: 4px 12px;
-      border: $border-size solid var(--color-wrapper);
+      border: $border-size solid var(--color-border);
     }
   }
 
-  img {
+  img:not(.emoji) {
     display: block;
     border-radius: $corner-radius;
+  }
+
+  .footnotes {
+    font-size: $font-sm;
   }
 }

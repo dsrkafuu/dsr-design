@@ -61,7 +61,7 @@ export default {
         },
         {
           type: '字体大小',
-          code: '10px, 12px, 14px, 16px, 18px, 20px',
+          code: '10px, 12px, 14px, 15px, 18px, 20px, 24px',
         },
       ],
       googleFonts:
@@ -146,8 +146,8 @@ export default {
 }
 
 .code {
-  background-color: var(--color-body);
-  padding: 2px 10px;
+  background-color: var(--color-wrapper);
+  padding: 2px 6px;
   border-radius: $corner-radius;
 }
 
@@ -163,8 +163,8 @@ export default {
     pre {
       overflow-x: auto;
       margin: 0;
-      background-color: var(--color-body);
-      padding: 10px 16px;
+      background-color: var(--color-wrapper);
+      padding: 12px 15px;
       border-radius: $corner-radius;
       line-height: 1.5;
     }

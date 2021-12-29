@@ -8,7 +8,7 @@ export default {};
 
 <style lang="scss">
 .not-found {
-  font-size: 18px;
+  font-size: $font-lg;
   text-align: center;
   padding: 48px;
 }

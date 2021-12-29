@@ -18,6 +18,7 @@
     <ColorGrid text="主体色" code="#f2f2f2" />
     <ColorGrid text="背景色" code="#ffffff" />
     <ColorGrid text="边框色" code="#dadfe6" />
+    <ColorGrid text="内背景色" code="#f1f1f1" />
     <ColorGrid text="字体色" code="#24292f" font="#fdfdfd" />
     <ColorGrid text="字体反色" code="#fdfdfd" />
   </div>
@@ -44,6 +45,7 @@
     <ColorGrid text="主体色" code="#2f3136" font="#e1e1e1" />
     <ColorGrid text="背景色" code="#474b51" font="#e1e1e1" />
     <ColorGrid text="边框色" code="#34373d" font="#e1e1e1" />
+    <ColorGrid text="内背景色" code="#34373d" font="#e1e1e1" />
     <ColorGrid text="字体色" code="#e1e1e1" font="#24292f" />
     <ColorGrid text="字体反色" code="#24292f" font="#e1e1e1" />
   </div>

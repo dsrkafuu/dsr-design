@@ -35,13 +35,12 @@ export default {
   box-shadow: var(--box-shadow);
   border-radius: $corner-radius;
   margin-bottom: $space-card;
-  font-size: $font-sm;
   text-align: center;
 
   pre {
     overflow-x: auto;
     margin: 0;
-    background-color: var(--color-body);
+    background-color: var(--color-wrapper);
     padding: 10px 16px;
     border-radius: $corner-radius;
     line-height: 1.5;

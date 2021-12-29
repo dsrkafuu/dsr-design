@@ -9,12 +9,13 @@
 
 html,
 body {
-  font-size: $font-sm;
+  font-size: $font-md;
   font-family: $font-family-body;
 }
 
 pre,
 code {
+  font-size: $font-sm;
   font-family: $font-family-mono;
   color: inherit;
   font-weight: inherit;
@@ -33,6 +34,7 @@ h6 {
 }
 
 img.emoji {
+  display: inline-block;
   height: 1em;
   width: 1em;
   margin: 0 0.05em 0 0.1em;
