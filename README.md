@@ -19,7 +19,7 @@ pnpm add dsr-design
 ## Environment Variables
 
 ```
-VITE_BASE_URL="/"
+VITE_BASE_URL=/
 ```
 
 ## Supported Browsers

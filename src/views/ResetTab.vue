@@ -65,9 +65,9 @@ export default {
         },
       ],
       googleFonts:
-        '<link rel="preconnect" href="https://fonts.googleapis.com">\n' +
-        '<link rel="preconnect" crossorigin href="https://fonts.gstatic.com">\n' +
-        '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500&family=Noto+Sans+SC:wght@400;500&family=Noto+Sans+JP:wght@400;500&family=Fira+Code:wght@400;500">',
+        '<link rel="preconnect" href="https://fonts.googleapis.com" />\n' +
+        '<link rel="preconnect" crossorigin href="https://fonts.gstatic.com" />\n' +
+        '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500&family=Noto+Sans+SC:wght@400;500&family=Noto+Sans+JP:wght@400;500&family=Fira+Code:wght@400;500" />',
       miscs: [
         {
           type: '盒子模型',
