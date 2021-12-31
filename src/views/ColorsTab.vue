@@ -2,7 +2,7 @@
   <JSGrid code="import 'dsr-design/color'" />
   <div class="light">
     <ColorGrid text="主色" code="#8aa2d3" activeCode="#9db1da" font="#fdfdfd" />
-    <ColorGrid text="透明色" code="transparent" activeCode="#f0f1f3" />
+    <ColorGrid text="透明色" code="transparent" activeCode="#f3f2f1" />
     <ColorGrid
       text="成功色"
       code="#77ccb0"

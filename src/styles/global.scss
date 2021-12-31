@@ -10,6 +10,7 @@ body,
   height: 100%;
   color: var(--color-font);
   background-color: var(--color-body);
+  overflow-y: auto;
 }
 
 ::selection {
