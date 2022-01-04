@@ -8,6 +8,7 @@ const ResetTab = () => import('./views/ResetTab.vue');
 const CodeTab = () => import('./views/CodeTab.vue');
 const ToolsTab = () => import('./views/ToolsTab.vue');
 const MarkdownTab = () => import('./views/MarkdownTab.vue');
+const APITab = () => import('./views/APITab.vue');
 const NotFound = () => import('./views/NotFound.vue');
 
 export const routes = [
@@ -42,6 +43,14 @@ export const routes = [
     component: MarkdownTab,
     meta: {
       name: '文章',
+    },
+  },
+  {
+    path: '/api',
+    name: 'APITab',
+    component: APITab,
+    meta: {
+      name: 'API',
     },
   },
   {

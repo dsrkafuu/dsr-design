@@ -157,6 +157,13 @@ code {
   font-size: $font-sm;
 }
 
+pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+}
+
 .google {
   .type {
     padding-left: $space-card;

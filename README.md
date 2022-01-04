@@ -8,7 +8,7 @@ Design scheme of all DSR projects.
 
 ## Usage
 
-Demo site: <https://design.dsrkafuu.net>
+Demo site & API Reference: <https://design.dsrkafuu.net>
 
 NPM package: <https://www.npmjs.com/package/dsr-design>
 

@@ -97,8 +97,18 @@
     border: none;
   }
 
+  pre {
+    word-wrap: normal;
+    font-size: $font-sm;
+    font-family: $font-family-mono;
+    background-color: var(--color-wrapper);
+    border-radius: $corner-radius;
+    padding: 12px 15px;
+    overflow-x: auto;
+  }
+
   kbd,
-  :not(pre) code,
+  code,
   tt {
     word-wrap: break-word;
     word-break: break-all;
@@ -116,18 +126,23 @@
     }
   }
 
-  del code {
-    text-decoration: inherit;
+  pre code {
+    word-wrap: inherit;
+    word-break: inherit;
+    font-size: inherit;
+    display: inline;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+    hyphens: none;
+
+    br {
+      display: unset;
+    }
   }
 
-  pre {
-    word-wrap: normal;
-    font-size: $font-sm;
-    font-family: $font-family-mono;
-    background-color: var(--color-wrapper);
-    border-radius: $corner-radius;
-    padding: 12px 15px;
-    overflow-x: auto;
+  del code {
+    text-decoration: inherit;
   }
 
   blockquote {
