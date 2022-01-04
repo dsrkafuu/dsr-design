@@ -11,36 +11,12 @@ import chalk from 'chalk';
 import sass from 'sass';
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 
-console.log(chalk.blue('building npm styles package...'));
+console.log(chalk.blue('building styles...'));
 const workers = [];
-
-// clean output folder
-fse.emptyDirSync(path.resolve(__dirname, '../package'));
-
-// copy package.json
-const inPackage = fse.readJSONSync(path.resolve(__dirname, '../package.json'));
-const outPackage = {};
-const neededKeys = [
-  'name',
-  'version',
-  'description',
-  'author',
-  'license',
-  'homepage',
-  'repository',
-];
-for (const key of neededKeys) {
-  outPackage[key] = inPackage[key];
-}
-fse.writeJSONSync(
-  path.resolve(__dirname, '../package/package.json'),
-  outPackage,
-  { spaces: 2 }
-);
 
 // build scss
 const scssFiles = glob
-  .sync('src/package/*.scss')
+  .sync('src/package/scss/*.scss')
   .map((file) => path.resolve(__dirname, '../', file));
 const scssConfig = {
   sourceMap: false,
@@ -72,12 +48,6 @@ for (const file of scssFiles) {
   fse.ensureDirSync(outDir);
   fse.copyFileSync(file, path.join(outDir, path.basename(file)));
 }
-
-// copy readme
-fse.copyFileSync(
-  path.resolve(__dirname, '../README.md'),
-  path.resolve(__dirname, '../package/README.md')
-);
 
 Promise.all(workers)
   .then(() => {

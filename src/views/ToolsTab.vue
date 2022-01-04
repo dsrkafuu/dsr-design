@@ -5,12 +5,12 @@
 </template>
 
 <script>
-import genIconIdx from '../../scripts/buildPackage.mjs?raw';
+import buildStyles from '../../scripts/buildStyles.mjs?raw';
 
 export default {
   data() {
     return {
-      code: genIconIdx,
+      code: buildStyles,
     };
   },
 };

@@ -16,11 +16,12 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         includePaths: [path.resolve(__dirname, './node_modules')],
-        additionalData: `@import '@/package/variables';`,
+        additionalData: `@import '@/package/scss/variables';`,
       },
     },
   },
   build: {
+    target: 'es2020',
     sourcemap: true,
     emptyOutDir: true,
     rollupOptions: {
