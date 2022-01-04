@@ -33,6 +33,7 @@ for (const key of neededKeys) {
 // ts lib related
 outPackage.type = 'module';
 outPackage.main = './lib/index.js';
+outPackage.types = './lib/index.d.ts';
 
 // write package.json
 fse.writeJSONSync(
