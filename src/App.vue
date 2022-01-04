@@ -88,7 +88,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-$header-height: 48px;
+$header-height: 50px;
 $footer-height: 48px;
 $responsive-width: 960px;
 
