@@ -1,10 +1,13 @@
+import { nextTick } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
-import ColorsTab from './views/ColorsTab.vue';
-import ResetTab from './views/ResetTab.vue';
-import CodeTab from './views/CodeTab.vue';
-import ToolsTab from './views/ToolsTab.vue';
-import MarkdownTab from './views/MarkdownTab.vue';
-import NotFound from './views/NotFound.vue';
+import { Prism } from './global';
+
+const ColorsTab = () => import('./views/ColorsTab.vue');
+const ResetTab = () => import('./views/ResetTab.vue');
+const CodeTab = () => import('./views/CodeTab.vue');
+const ToolsTab = () => import('./views/ToolsTab.vue');
+const MarkdownTab = () => import('./views/MarkdownTab.vue');
+const NotFound = () => import('./views/NotFound.vue');
 
 export const routes = [
   {
@@ -61,6 +64,15 @@ export const routes = [
 const router = createRouter({
   history: createWebHistory(import.meta.env.VITE_BASE_URL),
   routes,
+});
+
+router.afterEach((to, from, failure) => {
+  if (!failure) {
+    // highlight after route mounted
+    nextTick(() => {
+      Prism.highlightAll();
+    });
+  }
 });
 
 export default router;

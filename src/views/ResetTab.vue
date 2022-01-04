@@ -28,8 +28,8 @@
   <div class="tab tab-emoji">
     <div class="row" v-for="emoji of emojis" :key="emoji.type">
       <span class="type">{{ emoji.type }}</span>
-      <div class="code">
-        <code>{{ emoji.code }}</code>
+      <div class="code" v-if="emoji.code">
+        <code class="language-html">{{ emoji.code }}</code>
       </div>
     </div>
   </div>
@@ -39,7 +39,6 @@
 import JSGrid from '../components/CodeGrid.vue';
 
 export default {
-  inject: ['$Prism'],
   components: {
     JSGrid,
   },
@@ -107,6 +106,14 @@ export default {
       ],
       emojis: [
         {
+          type: 'Emoji',
+          code: 'Twemoji.parse("😀")',
+        },
+        {
+          type: '预连接',
+          code: '<link rel="preconnect" href="https://cdn.jsdelivr.net" />',
+        },
+        {
           type: '脚本 CDN 地址',
           code: 'https://cdn.jsdelivr.net/npm/twemoji@13.1.0/dist/twemoji.min.js',
         },
@@ -116,9 +123,6 @@ export default {
         },
       ],
     };
-  },
-  mounted() {
-    this.$Prism.highlightAll();
   },
 };
 </script>
@@ -135,6 +139,7 @@ export default {
   padding: $space-card;
   padding-bottom: 0;
   line-height: 1.5;
+  align-items: center;
 
   &:last-child {
     padding-bottom: $space-card;
@@ -145,10 +150,11 @@ export default {
   width: 140px;
 }
 
-.code {
+code {
   background-color: var(--color-wrapper);
   padding: 2px 6px;
   border-radius: $corner-radius;
+  font-size: $font-sm;
 }
 
 .google {

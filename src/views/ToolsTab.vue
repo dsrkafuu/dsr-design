@@ -8,14 +8,10 @@
 import genIconIdx from '../../scripts/buildPackage.mjs?raw';
 
 export default {
-  inject: ['$Prism'],
   data() {
     return {
       code: genIconIdx,
     };
-  },
-  mounted() {
-    this.$Prism.highlightAll();
   },
 };
 </script>

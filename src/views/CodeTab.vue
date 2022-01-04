@@ -10,10 +10,9 @@
 
 <script>
 import JSGrid from '../components/CodeGrid.vue';
-import prism from '../utils/prism.js?raw';
+import prism from '../examples/prism.js?raw';
 
 export default {
-  inject: ['$Prism'],
   components: {
     JSGrid,
   },
@@ -21,9 +20,6 @@ export default {
     return {
       code: prism,
     };
-  },
-  mounted() {
-    this.$Prism.highlightAll();
   },
 };
 </script>

@@ -6,7 +6,6 @@
 
 <script>
 export default {
-  inject: ['$Prism'],
   props: {
     code: {
       type: [String, Array],
@@ -21,9 +20,6 @@ export default {
         return this.code.join('\n');
       }
     },
-  },
-  async mounted() {
-    this.$Prism.highlightAll();
   },
 };
 </script>

@@ -7,10 +7,31 @@
 
 <script>
 import JSGrid from '../components/CodeGrid.vue';
-import example from '../utils/example.md?raw';
+import { twemoji } from '../global';
+import example from '../examples/example.md?raw';
+import markdownit from 'markdown-it';
+import markdownitEmoji from 'markdown-it-emoji';
+import markdownitSup from 'markdown-it-sup';
+import markdownitSub from 'markdown-it-sup';
+import markdownitFootnote from 'markdown-it-footnote';
+
+const mdit = markdownit({
+  html: true,
+  xHtmlOut: true,
+  linkify: true,
+})
+  .use(markdownitEmoji)
+  .use(markdownitSup)
+  .use(markdownitSub)
+  .use(markdownitFootnote);
+
+mdit.renderer.rules.emoji = (token, idx) => {
+  return twemoji.parse(token[idx].content, {
+    base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@13.1.0/assets/',
+  });
+};
 
 export default {
-  inject: ['$markdownit', '$Prism'],
   components: {
     JSGrid,
   },
@@ -20,8 +41,7 @@ export default {
     };
   },
   mounted() {
-    this.html = this.$markdownit.render(example);
-    this.$Prism.highlightAll();
+    this.html = mdit.render(example);
   },
 };
 </script>

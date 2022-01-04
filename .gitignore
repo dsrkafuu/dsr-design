@@ -5,3 +5,4 @@ node_modules/
 package/**
 dist/**
 dist-ssr/**
+stats.html
