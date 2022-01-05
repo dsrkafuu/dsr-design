@@ -1,8 +1,8 @@
 # DSRDESIGN
 
-![BADGE](https://img.shields.io/npm/v/dsr-design)
-![BADGE](https://img.shields.io/npm/dm/dsr-design)
-![BADGE](https://img.shields.io/npm/l/dsr-design)
+![](https://img.shields.io/npm/v/dsr-design)
+![](https://img.shields.io/npm/dm/dsr-design)
+![](https://img.shields.io/npm/l/dsr-design)
 
 Design scheme of all DSR projects.
 
