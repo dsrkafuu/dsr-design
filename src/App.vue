@@ -90,7 +90,7 @@ export default {
 <style scoped lang="scss">
 $header-height: 50px;
 $footer-height: 48px;
-$responsive-width: 960px;
+$responsive-width: 160px * 5 + 22px * 6 + 22px * 2;
 
 .header {
   width: 100%;
@@ -188,7 +188,7 @@ $responsive-width: 960px;
 
 .app {
   flex: 1 1 auto;
-  width: 960px;
+  width: $responsive-width;
   padding: 0 $space-card;
   margin: $space-card auto;
   min-height: calc(100vh - $header-height - $footer-height - $space-card * 3);
