@@ -17,6 +17,7 @@ var Prism = function (_self) {
   // The grammar object for plaintext
   var plainTextGrammar = {};
   var encode = function (tokens) {
+    console.log(lang, uniqueId, plainTextGrammar);
     if (tokens instanceof Token) {
       return new Token(tokens.type, encode(tokens.content), tokens.alias);
     } else if (Array.isArray(tokens)) {
