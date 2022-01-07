@@ -19,3 +19,5 @@ $font-family-cjk: 'Noto Sans SC', 'Noto Sans JP';
 $font-family-latin: Inter, -apple-system, BlinkMacSystemFont;
 $font-family-body: $font-family-latin, $font-family-cjk, sans-serif;
 $font-family-mono: 'Fira Code', $font-family-cjk, monospace;
+
+$filter-blur: saturate(180%) blur(3px);
