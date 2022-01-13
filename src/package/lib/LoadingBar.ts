@@ -109,7 +109,7 @@ class LoadingBar {
       return;
     }
     // end the bar fastly
-    const fastDuration = 500;
+    const fastDuration = 250;
     this._progressNode.style.transition = `width ${fastDuration}ms ease-out`;
     this._setProgress(100);
     // clear bar after animation ends
