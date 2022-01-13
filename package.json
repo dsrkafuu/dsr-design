@@ -18,6 +18,9 @@
     "dev": "vite",
     "build": "run-s script:genPackage script:buildStyles build:lib build:website"
   },
+  "peerDependencies": {
+    "normalize.css": "^8.0.0"
+  },
   "dependencies": {
     "markdown-it": "~12.3.0",
     "markdown-it-emoji": "~2.0.0",

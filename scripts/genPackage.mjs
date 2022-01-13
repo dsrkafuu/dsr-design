@@ -25,6 +25,7 @@ const neededKeys = [
   'license',
   'homepage',
   'repository',
+  'peerDependencies',
 ];
 for (const key of neededKeys) {
   outPackage[key] = inPackage[key];
