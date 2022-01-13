@@ -1,7 +1,7 @@
 /**
  * common loading bar,
  * default threshold is 400ms from median of TBT (https://web.dev/lighthouse-total-blocking-time/),
- * default duration is 7300ms from limit of TTI (https://web.dev/interactive/)
+ * default duration is 5600ms from median of TTI (https://web.dev/interactive/)
  */
 class LoadingBar {
   // params
@@ -24,7 +24,7 @@ class LoadingBar {
    */
   constructor(
     threshold = 400,
-    duration = 7300,
+    duration = 5600,
     wrapperId = 'dsr-loading-bar',
     progessId = 'dsr-loading-bar-progess'
   ) {
