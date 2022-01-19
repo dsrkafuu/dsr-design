@@ -42,7 +42,7 @@ export default {
   color: var(--color-font);
   border-radius: $corner-radius;
   user-select: none;
-  transition: background-color $transition-duration ease;
+  transition: background-color $transition-fast ease;
 
   &:hover {
     background-color: var(--color-transparent-active);

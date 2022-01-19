@@ -75,8 +75,8 @@ export default {
         },
         {
           type: '过渡时长',
-          code: 'transition: all 100ms ease;',
-          desc: '向微软学习的短过渡时长',
+          code: 'transition: color 100ms ease, width 300ms ease;',
+          desc: '长/短区分过渡时长',
         },
         {
           type: '圆角半径',

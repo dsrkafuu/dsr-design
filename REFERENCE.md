@@ -35,7 +35,8 @@
 ## SCSS 变量
 
 ```scss
-$transition-duration: 100ms;
+$transition-fast: 100ms;
+$transition-slow: 300ms;
 $corner-radius: 2px;
 $bold-weight: 500;
 

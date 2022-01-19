@@ -20,7 +20,7 @@ body,
 
 a {
   color: var(--color-font);
-  transition: color $transition-duration ease;
+  transition: color $transition-fast ease;
 
   &:hover {
     color: var(--color-primary);

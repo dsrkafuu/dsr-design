@@ -126,7 +126,7 @@ $responsive-width: 160px * 5 + 22px * 6 + 22px * 2;
       font-size: $font-xl;
       font-weight: $bold-weight;
       height: 100%;
-      transition: background-color $transition-duration ease;
+      transition: background-color $transition-fast ease;
     }
   }
 
@@ -139,7 +139,7 @@ $responsive-width: 160px * 5 + 22px * 6 + 22px * 2;
       height: $header-height;
       line-height: $header-height;
       text-decoration: none;
-      transition: background-color $transition-duration ease;
+      transition: background-color $transition-fast ease;
 
       &:hover {
         color: var(--color-font);
