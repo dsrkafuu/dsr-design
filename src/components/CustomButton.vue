@@ -4,32 +4,31 @@
   </button>
 </template>
 
-<script>
-export default {
-  emits: ['click'],
-  props: {
-    type: {
-      type: String,
-      default: '',
-      validator: (val) => {
-        return ['primary', 'success', 'danger', ''].indexOf(val) !== -1;
-      },
+<script setup>
+import { computed, defineEmits, defineProps } from 'vue';
+
+const emit = defineEmits(['click', 'delete']);
+
+const props = defineProps({
+  type: {
+    type: String,
+    default: '',
+    validator: (val) => {
+      return ['primary', 'success', 'danger', ''].indexOf(val) !== -1;
     },
   },
-  computed: {
-    className() {
-      return {
-        'custom-button': true,
-        [`custom-button-${this.type}`]: !!this.type,
-      };
-    },
-  },
-  methods: {
-    handleClick() {
-      this.$emit('click');
-    },
-  },
-};
+});
+
+const className = computed(() => {
+  return {
+    'custom-button': true,
+    [`custom-button-${props.type}`]: !!props.type,
+  };
+});
+
+function handleClick() {
+  emit('click');
+}
 </script>
 
 <style lang="scss">

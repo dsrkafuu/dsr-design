@@ -4,24 +4,23 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    code: {
-      type: [String, Array],
-      required: true,
-    },
+<script setup>
+import { defineProps, computed } from 'vue';
+
+const props = defineProps({
+  code: {
+    type: [String, Array],
+    required: true,
   },
-  computed: {
-    dispCode() {
-      if (typeof this.code === 'string') {
-        return this.code;
-      } else {
-        return this.code.join('\n');
-      }
-    },
-  },
-};
+});
+
+const dispCode = computed(() => {
+  if (typeof props.code === 'string') {
+    return props.code;
+  } else {
+    return props.code.join('\n');
+  }
+});
 </script>
 
 <style lang="scss">

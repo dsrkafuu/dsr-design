@@ -2,9 +2,7 @@
   <div class="not-found">404 无法找到资源</div>
 </template>
 
-<script>
-export default {};
-</script>
+<script setup></script>
 
 <style lang="scss">
 .not-found {

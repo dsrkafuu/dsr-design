@@ -48,43 +48,21 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { computed } from 'vue';
 import { RouterLink, RouterView } from 'vue-router';
 import { routes } from './router';
 
-export default {
-  components: {
-    RouterLink,
-    RouterView,
-  },
-  data() {
-    return {};
-  },
-  computed: {
-    /**
-     * 需要在菜单中显示的路由
-     */
-    tabRoutes() {
-      const ret = [];
-      for (const route of routes) {
-        if (route.name !== 'NotFound') {
-          ret.push(route);
-        }
-      }
-      return ret;
-    },
-    /**
-     * 当前路由的路径
-     */
-    matchedPath() {
-      const matched = this.$route.matched;
-      if (matched.length > 0) {
-        return matched[0].path;
-      }
-      return '';
-    },
-  },
-};
+// 需要在菜单中显示的路由
+const tabRoutes = computed(() => {
+  const ret = [];
+  for (const route of routes) {
+    if (route.name !== 'NotFound') {
+      ret.push(route);
+    }
+  }
+  return ret;
+});
 </script>
 
 <style scoped lang="scss">

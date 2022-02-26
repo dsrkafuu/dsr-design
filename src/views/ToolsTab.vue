@@ -1,19 +1,11 @@
 <template>
   <div class="tab">
-    <pre><code class="language-js">{{ code }}</code></pre>
+    <pre><code class="language-js">{{ buildStyles }}</code></pre>
   </div>
 </template>
 
-<script>
+<script setup>
 import buildStyles from '../../scripts/buildStyles.mjs?raw';
-
-export default {
-  data() {
-    return {
-      code: buildStyles,
-    };
-  },
-};
 </script>
 
 <style scoped lang="scss">

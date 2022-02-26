@@ -51,16 +51,9 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import JSGrid from '../components/CodeGrid.vue';
 import ColorGrid from '../components/ColorGrid.vue';
-
-export default {
-  components: {
-    JSGrid,
-    ColorGrid,
-  },
-};
 </script>
 
 <style scoped lang="scss">

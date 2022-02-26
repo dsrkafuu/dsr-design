@@ -35,96 +35,87 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import JSGrid from '../components/CodeGrid.vue';
 
-export default {
-  components: {
-    JSGrid,
+const codes = ["import 'dsr-design/variables'", "import 'dsr-design/reset'"];
+const fonts = [
+  {
+    type: 'CJK 字体',
+    code: "'Noto Sans SC', 'Noto Sans JP', sans-serif",
   },
-  data() {
-    return {
-      codes: ["import 'dsr-design/variables'", "import 'dsr-design/reset'"],
-      fonts: [
-        {
-          type: 'CJK 字体',
-          code: "'Noto Sans SC', 'Noto Sans JP', sans-serif",
-        },
-        {
-          type: '拉丁字体',
-          code: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
-        },
-        {
-          type: '等宽字体',
-          code: "'Fira Code', monospace",
-        },
-        {
-          type: '字体大小',
-          code: '10px, 12px, 14px, 15px, 18px, 20px, 24px',
-        },
-      ],
-      googleFonts:
-        '<link rel="preconnect" href="https://fonts.googleapis.com" />\n' +
-        '<link rel="preconnect" crossorigin href="https://fonts.gstatic.com" />\n' +
-        '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500&family=Noto+Sans+SC:wght@400;500&family=Noto+Sans+JP:wght@400;500&family=Fira+Code:wght@400;500" />',
-      miscs: [
-        {
-          type: '盒子模型',
-          code: 'box-sizing: border-box;',
-          desc: '避免手动痛苦计算宽度',
-        },
-        {
-          type: '过渡时长',
-          code: 'transition: color 100ms ease, width 300ms ease;',
-          desc: '长/短区分过渡时长',
-        },
-        {
-          type: '圆角半径',
-          code: 'border-radius: 2px;',
-          desc: '更好控制的小半径',
-        },
-        {
-          type: '粗体字重',
-          code: 'font-weight: 500;',
-          desc: '减轻粗体字的模糊不清问题',
-        },
-        {
-          type: '高亮条宽度',
-          code: 'border-bottom: 2px solid var(--color-primary);',
-          desc: '激活效果的链接和菜单',
-        },
-        {
-          type: '页眉页脚',
-          code: 'height: 60px; height: 48px;',
-          desc: '实心页眉透明页脚',
-        },
-        {
-          type: '空格大小',
-          code: 'padding: 20px;',
-          desc: '基础卡片空格',
-        },
-      ],
-      emojis: [
-        {
-          type: 'Emoji',
-          code: 'Twemoji.parse("😀")',
-        },
-        {
-          type: '预连接',
-          code: '<link rel="preconnect" href="https://cdn.jsdelivr.net" />',
-        },
-        {
-          type: '脚本 CDN 地址',
-          code: 'https://cdn.jsdelivr.net/npm/twemoji@13.1.0/dist/twemoji.min.js',
-        },
-        {
-          type: '资源 Base 路径',
-          code: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@13.1.0/assets/',
-        },
-      ],
-    };
+  {
+    type: '拉丁字体',
+    code: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
   },
-};
+  {
+    type: '等宽字体',
+    code: "'Fira Code', monospace",
+  },
+  {
+    type: '字体大小',
+    code: '10px, 12px, 14px, 15px, 18px, 20px, 24px',
+  },
+];
+const googleFonts =
+  '<link rel="preconnect" href="https://fonts.googleapis.com" />\n' +
+  '<link rel="preconnect" crossorigin href="https://fonts.gstatic.com" />\n' +
+  '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500&family=Noto+Sans+SC:wght@400;500&family=Noto+Sans+JP:wght@400;500&family=Fira+Code:wght@400;500" />';
+const miscs = [
+  {
+    type: '盒子模型',
+    code: 'box-sizing: border-box;',
+    desc: '避免手动痛苦计算宽度',
+  },
+  {
+    type: '过渡时长',
+    code: 'transition: color 100ms ease, width 300ms ease;',
+    desc: '长/短区分过渡时长',
+  },
+  {
+    type: '圆角半径',
+    code: 'border-radius: 2px;',
+    desc: '更好控制的小半径',
+  },
+  {
+    type: '粗体字重',
+    code: 'font-weight: 500;',
+    desc: '减轻粗体字的模糊不清问题',
+  },
+  {
+    type: '高亮条宽度',
+    code: 'border-bottom: 2px solid var(--color-primary);',
+    desc: '激活效果的链接和菜单',
+  },
+  {
+    type: '页眉页脚',
+    code: 'height: 60px; height: 48px;',
+    desc: '实心页眉透明页脚',
+  },
+  {
+    type: '空格大小',
+    code: 'padding: 20px;',
+    desc: '基础卡片空格',
+  },
+];
+const emojis = [
+  {
+    type: 'Emoji',
+    code: 'Twemoji.parse("😀")',
+  },
+  {
+    type: '预连接',
+    code: '<link rel="preconnect" href="https://cdn.jsdelivr.net" />',
+  },
+  {
+    type: '脚本 CDN 地址',
+    code: 'https://cdn.jsdelivr.net/npm/twemoji@13.1.0/dist/twemoji.min.js',
+  },
+  {
+    type: '资源 Base 路径',
+    code: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@13.1.0/assets/',
+  },
+];
 </script>
 
 <style scoped lang="scss">

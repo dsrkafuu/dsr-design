@@ -5,7 +5,8 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { ref, onMounted } from 'vue';
 import JSGrid from '../components/CodeGrid.vue';
 import { twemoji } from '../global';
 import example from '../examples/example.md?raw';
@@ -31,19 +32,10 @@ mdit.renderer.rules.emoji = (token, idx) => {
   });
 };
 
-export default {
-  components: {
-    JSGrid,
-  },
-  data() {
-    return {
-      html: '',
-    };
-  },
-  mounted() {
-    this.html = mdit.render(example);
-  },
-};
+const html = ref('');
+onMounted(() => {
+  html.value = mdit.render(example);
+});
 </script>
 
 <style scoped lang="scss">

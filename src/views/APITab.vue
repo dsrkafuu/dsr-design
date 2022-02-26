@@ -4,7 +4,8 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { ref, onMounted } from 'vue';
 import example from '../../REFERENCE.md?raw';
 import markdownit from 'markdown-it';
 
@@ -14,16 +15,10 @@ const mdit = markdownit({
   linkify: true,
 });
 
-export default {
-  data() {
-    return {
-      html: '',
-    };
-  },
-  mounted() {
-    this.html = mdit.render(example);
-  },
-};
+const html = ref('');
+onMounted(() => {
+  html.value = mdit.render(example);
+});
 </script>
 
 <style scoped lang="scss">

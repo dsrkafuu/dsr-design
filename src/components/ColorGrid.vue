@@ -16,55 +16,46 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    text: {
-      type: String,
-      required: true,
-    },
-    font: {
-      type: String,
-      default: '#24292f',
-    },
-    code: {
-      type: String,
-      required: true,
-    },
-    activeCode: {
-      type: String,
-      default: '',
-    },
+<script setup>
+import { defineProps, ref, computed } from 'vue';
+
+const props = defineProps({
+  text: {
+    type: String,
+    required: true,
   },
-  data() {
-    return {
-      hovered: false,
-    };
+  font: {
+    type: String,
+    default: '#24292f',
   },
-  computed: {
-    /**
-     * 鼠标高亮样式
-     */
-    displayStyle() {
-      return {
-        backgroundColor: this.hovered
-          ? this.activeCode || this.code
-          : this.code,
-      };
-    },
+  code: {
+    type: String,
+    required: true,
   },
-  methods: {
-    /**
-     * 处理鼠标高亮
-     */
-    handleMouseEnter() {
-      this.hovered = true;
-    },
-    handleMouseLeave() {
-      this.hovered = false;
-    },
+  activeCode: {
+    type: String,
+    default: '',
   },
-};
+});
+
+const hovered = ref(false);
+
+// 鼠标高亮样式
+const displayStyle = computed(() => {
+  return {
+    backgroundColor: hovered.value
+      ? props.activeCode || props.code
+      : props.code,
+  };
+});
+
+// 处理鼠标高亮
+function handleMouseEnter() {
+  hovered.value = true;
+}
+function handleMouseLeave() {
+  hovered.value = false;
+}
 </script>
 
 <style lang="scss">

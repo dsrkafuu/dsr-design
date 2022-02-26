@@ -1,27 +1,16 @@
 <template>
   <JSGrid code="import 'dsr-design/prism'" />
   <div class="light">
-    <pre><code class="language-js">{{ code }}</code></pre>
+    <pre><code class="language-js">{{ prism }}</code></pre>
   </div>
   <div class="dark">
-    <pre><code class="language-js prism-dark">{{ code }}</code></pre>
+    <pre><code class="language-js prism-dark">{{ prism }}</code></pre>
   </div>
 </template>
 
-<script>
+<script setup>
 import JSGrid from '../components/CodeGrid.vue';
 import prism from '../examples/prism.js?raw';
-
-export default {
-  components: {
-    JSGrid,
-  },
-  data() {
-    return {
-      code: prism,
-    };
-  },
-};
 </script>
 
 <style scoped lang="scss">
