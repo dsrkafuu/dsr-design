@@ -18,6 +18,7 @@ fse.emptyDirSync(path.resolve(__dirname, '../package'));
 const inPackage = fse.readJSONSync(path.resolve(__dirname, '../package.json'));
 const outPackage = {};
 const neededKeys = [
+  'publishConfig',
   'name',
   'version',
   'description',

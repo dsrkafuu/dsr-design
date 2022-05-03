@@ -1,5 +1,8 @@
 {
   "private": true,
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "name": "dsr-design",
   "version": "2.6.0",
   "description": "Design scheme of all DSR projects.",
