@@ -16,7 +16,7 @@ const workers = [];
 
 // build scss
 const scssFiles = glob
-  .sync('src/package/scss/*.scss')
+  .sync('src/package/*.scss')
   .map((file) => path.resolve(__dirname, '../', file));
 const scssConfig = {
   sourceMap: false,

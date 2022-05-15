@@ -1,6 +1,5 @@
 import { nextTick } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
-import { LoadingBar } from './package/lib';
 import { Prism } from './global';
 
 const ColorsTab = () => import('./views/ColorsTab.vue');
@@ -28,7 +27,6 @@ export const routes = [
       name: '色彩',
     },
   },
-
   {
     path: '/code',
     name: 'CodeTab',
@@ -76,19 +74,8 @@ const router = createRouter({
   routes,
 });
 
-const loadingBar = new LoadingBar();
-
-router.beforeEach((to, from) => {
-  if (to.path !== from.path) {
-    loadingBar.start();
-  }
-});
-
-router.afterEach((to, from, failure) => {
+router.afterEach((_, __, failure) => {
   if (!failure) {
-    if (to.path !== from.path) {
-      loadingBar.end();
-    }
     // highlight after route mounted
     nextTick(() => {
       Prism.highlightAll();

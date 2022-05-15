@@ -24,8 +24,9 @@ onMounted(() => {
 <style scoped lang="scss">
 .tab {
   padding: $space-card;
-  border-radius: $corner-radius;
-  background-color: var(--color-bg);
+  border-radius: $corner-radius-lg;
+  background-color: var(--color-backdrop);
+  backdrop-filter: $filter-mica;
   box-shadow: var(--box-shadow);
 }
 </style>

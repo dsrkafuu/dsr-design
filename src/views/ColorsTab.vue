@@ -1,79 +1,44 @@
 <template>
   <JSGrid code="import 'dsr-design/color'" />
-  <div class="light">
-    <ColorGrid text="主色" code="#8aa2d3" activeCode="#9db1da" font="#fdfdfd" />
-    <ColorGrid text="透明色" code="transparent" activeCode="#f3f2f1" />
+  <div class="grids">
     <ColorGrid
-      text="成功色"
-      code="#77ccb0"
-      activeCode="#8ad3bb"
-      font="#fdfdfd"
+      v-for="item of light"
+      :key="item.name"
+      :text="item.name"
+      :code="item.code"
+      :font="item.font"
+      :mica="item.mica"
     />
-    <ColorGrid
-      text="危险色"
-      code="#d38aa2"
-      activeCode="#da9db1"
-      font="#fdfdfd"
-    />
-    <ColorGrid text="主体色" code="#f2f2f2" />
-    <ColorGrid text="背景色" code="#ffffff" />
-    <ColorGrid text="边框色" code="#dadfe6" />
-    <ColorGrid text="内背景色" code="#f1f1f1" />
-    <ColorGrid text="字体色" code="#24292f" font="#fdfdfd" />
-    <ColorGrid text="字体反色" code="#fdfdfd" />
-  </div>
-  <div class="dark">
-    <ColorGrid text="主色" code="#8aa2d3" activeCode="#9db1da" font="#fdfdfd" />
-    <ColorGrid
-      text="透明色"
-      code="transparent"
-      activeCode="#585c61"
-      font="#e1e1e1"
-    />
-    <ColorGrid
-      text="成功色"
-      code="#77ccb0"
-      activeCode="#8ad3bb"
-      font="#fdfdfd"
-    />
-    <ColorGrid
-      text="危险色"
-      code="#d38aa2"
-      activeCode="#da9db1"
-      font="#fdfdfd"
-    />
-    <ColorGrid text="主体色" code="#2f3136" font="#e1e1e1" />
-    <ColorGrid text="背景色" code="#474b51" font="#e1e1e1" />
-    <ColorGrid text="边框色" code="#34373d" font="#e1e1e1" />
-    <ColorGrid text="内背景色" code="#34373d" font="#e1e1e1" />
-    <ColorGrid text="字体色" code="#e1e1e1" font="#24292f" />
-    <ColorGrid text="字体反色" code="#24292f" font="#e1e1e1" />
   </div>
 </template>
 
 <script setup>
 import JSGrid from '../components/CodeGrid.vue';
 import ColorGrid from '../components/ColorGrid.vue';
+
+const light = [
+  { name: 'Mica 背景色', code: 'rgba(255, 255, 255, 0.8)', mica: true },
+  { name: 'Mica 背景色 (高亮)', code: 'rgba(255, 255, 255, 0.65)', mica: true },
+  { name: 'Mica 内背景色', code: 'rgba(255, 255, 255, 0.65)', mica: true },
+  { name: 'Mica 边框色', code: '#bbbbbb' },
+  { name: '主色', code: '#8aa2d3', font: '#fdfdfd' },
+  { name: '主色 (高亮)', code: '#9db1da', font: '#fdfdfd' },
+  { name: '成功色', code: '#77ccb0', font: '#fdfdfd' },
+  { name: '成功色 (高亮)', code: '#8ad3bb', font: '#fdfdfd' },
+  { name: '危险色', code: '#d38aa2', font: '#fdfdfd' },
+  { name: '危险色 (高亮)', code: '#da9db1', font: '#fdfdfd' },
+  { name: '透明色 (高亮)', code: '#f3f2f1' },
+  { name: '主体色', code: '#f2f2f2' },
+  { name: '背景色', code: '#ffffff' },
+  { name: '内背景色', code: '#f1f1f1' },
+  { name: '边框色', code: '#dadfe6' },
+  { name: '字体色', code: '#24292f', font: '#fdfdfd' },
+  { name: '字体反色', code: '#fdfdfd' },
+];
 </script>
 
 <style scoped lang="scss">
-.light,
-.dark {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: $space-card;
-  padding: $space-card;
-  border-radius: $corner-radius;
-}
-
-.light {
-  background-color: var(--color-bg);
-  margin-bottom: $space-card;
-  box-shadow: var(--box-shadow);
-}
-
-.dark {
-  background-color: var(--dark-color-bg);
-  box-shadow: var(--dark-box-shadow);
+.grids {
+  border-radius: $corner-radius-lg;
 }
 </style>

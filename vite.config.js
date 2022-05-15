@@ -16,7 +16,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         includePaths: [path.resolve(__dirname, './node_modules')],
-        additionalData: `@import '@/package/scss/variables';`,
+        additionalData: `@import '@/package/variables';`,
       },
     },
   },

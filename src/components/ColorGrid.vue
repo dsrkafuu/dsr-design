@@ -3,15 +3,15 @@
     class="color-grid"
     @mouseenter="handleMouseEnter"
     @mouseleave="handleMouseLeave"
-    :style="{ color: font }"
+    :style="{
+      color: font,
+      backdropFilter: mica ? 'saturate(200%) blur(24px)' : 'none',
+    }"
   >
     <div class="color-grid-display" :style="displayStyle"></div>
     <div class="color-grid-wrapper">
       <div class="color-grid-text">{{ text }}</div>
       <div class="color-grid-code">{{ code }}</div>
-      <div v-if="activeCode" class="color-grid-active-code">
-        {{ activeCode }}
-      </div>
     </div>
   </div>
 </template>
@@ -32,9 +32,9 @@ const props = defineProps({
     type: String,
     required: true,
   },
-  activeCode: {
-    type: String,
-    default: '',
+  mica: {
+    type: Boolean,
+    default: false,
   },
 });
 
@@ -62,11 +62,13 @@ function handleMouseLeave() {
 .color-grid {
   position: relative;
   display: inline-block;
-  width: 160px;
-  height: 160px;
-  border-radius: $corner-radius;
+  width: 100%;
+  height: 50px;
+  border-radius: $corner-radius-lg;
   overflow: hidden;
   z-index: 10;
+  margin-bottom: 5px;
+  box-shadow: var(--box-shadow);
 
   &-display {
     z-index: 20;
@@ -87,22 +89,20 @@ function handleMouseLeave() {
     bottom: 0;
     flex-wrap: wrap;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &-text {
     user-select: none;
-    margin-top: 36px;
     font-size: $font-lg;
+    width: 200px;
   }
 
   &-code {
-    margin-top: 20px;
     font-family: $font-family-mono;
-  }
-
-  &-active-code {
-    margin-top: 16px;
-    font-family: $font-family-mono;
+    width: 300px;
   }
 }
 </style>

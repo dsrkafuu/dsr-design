@@ -64,37 +64,37 @@ const googleFonts =
 const miscs = [
   {
     type: '盒子模型',
-    code: 'box-sizing: border-box;',
+    code: 'border-box',
     desc: '避免手动痛苦计算宽度',
   },
   {
     type: '过渡时长',
-    code: 'transition: color 100ms ease, width 300ms ease;',
+    code: 'color 100ms ease, width 300ms ease',
     desc: '长/短区分过渡时长',
   },
   {
     type: '圆角半径',
-    code: 'border-radius: 2px;',
-    desc: '更好控制的小半径',
+    code: '4px, 6px, 8px',
+    desc: '多种半径',
   },
   {
     type: '粗体字重',
-    code: 'font-weight: 500;',
+    code: '500',
     desc: '减轻粗体字的模糊不清问题',
   },
   {
     type: '高亮条宽度',
-    code: 'border-bottom: 2px solid var(--color-primary);',
-    desc: '激活效果的链接和菜单',
+    code: '3px',
+    desc: 'Mica 设计的高亮条',
   },
   {
     type: '页眉页脚',
-    code: 'height: 60px; height: 48px;',
+    code: '56px, 64px',
     desc: '实心页眉透明页脚',
   },
   {
     type: '空格大小',
-    code: 'padding: 20px;',
+    code: '20px, 16px, 15px',
     desc: '基础卡片空格',
   },
 ];
@@ -120,9 +120,10 @@ const emojis = [
 
 <style scoped lang="scss">
 .tab {
-  background-color: var(--color-bg);
+  background-color: var(--color-backdrop);
+  backdrop-filter: $filter-mica;
   box-shadow: var(--box-shadow);
-  border-radius: $corner-radius;
+  border-radius: $corner-radius-lg;
 }
 
 .row {
@@ -142,9 +143,9 @@ const emojis = [
 }
 
 code {
-  background-color: var(--color-wrapper);
-  padding: 2px 6px;
-  border-radius: $corner-radius;
+  background-color: var(--color-backdrop-wrapper);
+  padding: 2px 8px;
+  border-radius: $corner-radius-sm;
   font-size: $font-sm;
 }
 
@@ -167,9 +168,9 @@ pre code {
     pre {
       overflow-x: auto;
       margin: 0;
-      background-color: var(--color-wrapper);
+      background-color: var(--color-backdrop-wrapper);
       padding: 12px 15px;
-      border-radius: $corner-radius;
+      border-radius: $corner-radius-sm;
       line-height: 1.5;
     }
   }

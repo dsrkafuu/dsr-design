@@ -13,15 +13,25 @@
         >
           {{ route.meta.name }}
         </RouterLink>
+      </nav>
+      <div class="menu-right">
         <a
-          class="menu-item menu-item-right"
+          class="menu-item"
           href="https://github.com/dsrkafuu/dsr-design"
+          target="_blank"
+          rel="noopener"
+        >
+          BLOG
+        </a>
+        <a
+          class="menu-item"
+          href="https://blog.dsrkafuu.net/"
           target="_blank"
           rel="noopener"
         >
           GitHub
         </a>
-      </nav>
+      </div>
     </div>
   </div>
   <div class="app">
@@ -66,8 +76,8 @@ const tabRoutes = computed(() => {
 </script>
 
 <style scoped lang="scss">
-$header-height: 50px;
-$footer-height: 48px;
+$header-height: 56px;
+$footer-height: 64px;
 $responsive-width: 160px * 5 + 22px * 6 + 22px * 2;
 
 .header {
@@ -75,8 +85,13 @@ $responsive-width: 160px * 5 + 22px * 6 + 22px * 2;
   min-width: $responsive-width;
   flex: 0 0 auto;
   text-align: center;
-  background-color: var(--color-bg);
+  background-color: var(--color-backdrop);
+  backdrop-filter: $filter-mica;
   box-shadow: var(--box-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  flex: 0 0 auto;
 
   .nav {
     height: $header-height;
@@ -90,17 +105,20 @@ $responsive-width: 160px * 5 + 22px * 6 + 22px * 2;
       text-decoration: none;
       padding: 0 $space-card;
       display: inline-block;
+      margin: 5px 0;
+      border-radius: $corner-radius-sm;
 
       &:hover {
         color: var(--color-font);
-        background-color: var(--color-transparent-active);
+        background-color: var(--color-backdrop-active);
       }
     }
 
     h1 {
       margin: 0;
       display: inline-block;
-      line-height: $header-height;
+      height: $header-height - 10px;
+      line-height: $header-height - 10px;
       font-size: $font-xl;
       font-weight: $bold-weight;
       height: 100%;
@@ -110,28 +128,46 @@ $responsive-width: 160px * 5 + 22px * 6 + 22px * 2;
 
   .menu {
     height: $header-height;
+    padding: 5px;
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 
     &-item {
-      padding: 0 $space-card;
+      padding: 0 16px;
       display: inline-block;
-      height: $header-height;
-      line-height: $header-height;
+      height: $header-height - 10px;
+      line-height: $header-height - 10px;
       text-decoration: none;
       transition: background-color $transition-fast ease;
+      border-radius: $corner-radius-sm;
+      position: relative;
 
       &:hover {
         color: var(--color-font);
-        background-color: var(--color-transparent-active);
+        background-color: var(--color-backdrop-active);
       }
 
-      &-right {
-        position: absolute;
-        right: 0;
+      &:not(:first-child) {
+        margin-left: 5px;
       }
     }
 
     .router-link-active {
-      border-bottom: $highlight-size solid var(--color-primary);
+      background-color: var(--color-backdrop-active);
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: $active-size;
+        border-radius: $active-radius;
+        background-color: var(--color-primary);
+      }
     }
   }
 }
@@ -141,8 +177,11 @@ $responsive-width: 160px * 5 + 22px * 6 + 22px * 2;
   width: 100%;
   min-width: $responsive-width;
   flex: 0 0 auto;
-  height: $footer-height + $space-card;
-  padding-bottom: $space-card;
+  height: $footer-height;
+  background-color: var(--color-backdrop);
+  backdrop-filter: $filter-mica;
+  box-shadow: var(--box-shadow);
+  flex: 0 0 auto;
 
   &-inner {
     height: $footer-height;
@@ -169,6 +208,5 @@ $responsive-width: 160px * 5 + 22px * 6 + 22px * 2;
   width: $responsive-width;
   padding: 0 $space-card;
   margin: $space-card auto;
-  min-height: calc(100vh - $header-height - $footer-height - $space-card * 3);
 }
 </style>

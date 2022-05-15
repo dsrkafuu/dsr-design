@@ -26,16 +26,15 @@ const neededKeys = [
   'license',
   'homepage',
   'repository',
-  'peerDependencies',
 ];
 for (const key of neededKeys) {
   outPackage[key] = inPackage[key];
 }
 
 // ts lib related
-outPackage.type = 'module';
-outPackage.main = './lib/index.js';
-outPackage.types = './lib/index.d.ts';
+// outPackage.type = 'module';
+// outPackage.main = './lib/index.js';
+// outPackage.types = './lib/index.d.ts';
 
 // write package.json
 fse.writeJSONSync(

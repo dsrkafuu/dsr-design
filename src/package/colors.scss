@@ -1,29 +1,41 @@
 :root {
   --color-primary: #8aa2d3;
   --color-primary-active: #9db1da;
-  --color-transparent-active: #f3f2f1;
   --color-success: #77ccb0;
   --color-success-active: #8ad3bb;
   --color-danger: #d38aa2;
   --color-danger-active: #da9db1;
+  --color-transparent-active: #f3f2f1;
+
   --color-body: #f2f2f2;
   --color-bg: #ffffff;
-  --color-backdrop: rgba(255, 255, 255, 0.8);
   --color-wrapper: #f1f1f1;
   --color-border: #dadfe6;
   --color-font: #24292f;
   --color-font-inverse: #fdfdfd;
-  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  --color-backdrop: rgba(255, 255, 255, 0.8);
+  --color-backdrop-active: rgba(255, 255, 255, 0.65);
+  --color-backdrop-wrapper: rgba(255, 255, 255, 0.65);
+  --color-backdrop-border: #bbbbbb;
+
+  --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 
   @media (prefers-color-scheme: dark) {
     --color-transparent-active: #585c61;
+
     --color-body: #2f3136;
     --color-bg: #474b51;
-    --color-backdrop: rgba(77, 81, 88, 0.8);
     --color-wrapper: #34373d;
     --color-border: #34373d;
     --color-font: #e1e1e1;
     --color-font-inverse: #24292f;
-    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    --color-backdrop: rgba(71, 75, 81, 0.9);
+    --color-backdrop-active: rgba(255, 255, 255, 0.1);
+    --color-backdrop-wrapper: rgba(255, 255, 255, 0.1);
+    --color-backdrop-border: #bbbbbb;
+
+    --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   }
 }

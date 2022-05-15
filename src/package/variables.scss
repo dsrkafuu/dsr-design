@@ -1,14 +1,20 @@
 $transition-fast: 100ms;
 $transition-slow: 300ms;
-$corner-radius: 2px;
+
 $bold-weight: 500;
 
 $highlight-size: 2px;
-$border-size: 2px;
+$border-size: 1px;
+$active-size: 3px;
+$active-radius: 2px;
 
 $space-card: 22px;
 $space-mobile: 16px;
 $space-para: 15px;
+
+$corner-radius-lg: 8px;
+$corner-radius-md: 6px;
+$corner-radius-sm: 4px;
 
 $font-xl: 20px;
 $font-lg: 18px;
@@ -22,3 +28,4 @@ $font-family-body: $font-family-latin, $font-family-cjk, sans-serif;
 $font-family-mono: 'Fira Code', $font-family-cjk, monospace;
 
 $filter-blur: saturate(180%) blur(3px);
+$filter-mica: saturate(200%) blur(24px);

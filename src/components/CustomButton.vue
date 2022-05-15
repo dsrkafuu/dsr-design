@@ -39,7 +39,7 @@ function handleClick() {
   cursor: pointer;
   padding: 8px 12px;
   color: var(--color-font);
-  border-radius: $corner-radius;
+  border-radius: $corner-radius-lg;
   user-select: none;
   transition: background-color $transition-fast ease;
 

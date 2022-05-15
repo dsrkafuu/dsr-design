@@ -1,16 +1,32 @@
-@import '../package/scss/reset';
-@import '../package/scss/colors';
-@import '../package/scss/prism';
-@import '../package/scss/markdown';
-@import './remap';
+@import '../package/reset';
+@import '../package/colors';
+@import '../package/prism';
+@import '../package/markdown';
 
-html,
-body,
-#root {
+html {
   height: 100%;
   color: var(--color-font);
-  background-color: var(--color-body);
   overflow-y: auto;
+  background-color: var(--color-body);
+}
+
+body {
+  min-height: 100%;
+  background: rgb(175, 191, 225);
+  background: linear-gradient(
+    135deg,
+    rgba(175, 191, 225, 1) 40%,
+    rgba(187, 181, 219, 1) 100%
+  );
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  min-height: 100%;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 ::selection {

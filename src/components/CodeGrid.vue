@@ -25,19 +25,20 @@ const dispCode = computed(() => {
 
 <style lang="scss">
 .js-grid {
-  background-color: var(--color-bg);
+  background-color: var(--color-backdrop);
   padding: $space-card;
   box-shadow: var(--box-shadow);
-  border-radius: $corner-radius;
+  border-radius: $corner-radius-lg;
   margin-bottom: $space-card;
   text-align: center;
+  backdrop-filter: $filter-mica;
 
   pre {
     overflow-x: auto;
     margin: 0;
-    background-color: var(--color-wrapper);
+    background-color: var(--color-backdrop-wrapper);
     padding: 10px 16px;
-    border-radius: $corner-radius;
+    border-radius: $corner-radius-sm;
     line-height: 1.5;
   }
 }

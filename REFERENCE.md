@@ -4,30 +4,42 @@
 :root {
   --color-primary: #8aa2d3;
   --color-primary-active: #9db1da;
-  --color-transparent-active: #f3f2f1;
   --color-success: #77ccb0;
   --color-success-active: #8ad3bb;
   --color-danger: #d38aa2;
   --color-danger-active: #da9db1;
+  --color-transparent-active: #f3f2f1;
+
   --color-body: #f2f2f2;
   --color-bg: #ffffff;
-  --color-backdrop: rgba(255, 255, 255, 0.8);
   --color-wrapper: #f1f1f1;
   --color-border: #dadfe6;
   --color-font: #24292f;
   --color-font-inverse: #fdfdfd;
-  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  --color-backdrop: rgba(255, 255, 255, 0.8);
+  --color-backdrop-active: rgba(255, 255, 255, 0.65);
+  --color-backdrop-wrapper: rgba(255, 255, 255, 0.65);
+  --color-backdrop-border: #bbbbbb;
+
+  --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 
   @media (prefers-color-scheme: dark) {
     --color-transparent-active: #585c61;
+
     --color-body: #2f3136;
     --color-bg: #474b51;
-    --color-backdrop: rgba(77, 81, 88, 0.8);
     --color-wrapper: #34373d;
     --color-border: #34373d;
     --color-font: #e1e1e1;
     --color-font-inverse: #24292f;
-    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    --color-backdrop: rgba(71, 75, 81, 0.9);
+    --color-backdrop-active: rgba(255, 255, 255, 0.1);
+    --color-backdrop-wrapper: rgba(255, 255, 255, 0.1);
+    --color-backdrop-border: #bbbbbb;
+
+    --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   }
 }
 ```
@@ -37,15 +49,21 @@
 ```scss
 $transition-fast: 100ms;
 $transition-slow: 300ms;
-$corner-radius: 2px;
+
 $bold-weight: 500;
 
 $highlight-size: 2px;
-$border-size: 2px;
+$border-size: 1px;
+$active-size: 3px;
+$active-radius: 2px;
 
 $space-card: 22px;
 $space-mobile: 16px;
 $space-para: 15px;
+
+$corner-radius-lg: 8px;
+$corner-radius-md: 6px;
+$corner-radius-sm: 4px;
 
 $font-xl: 20px;
 $font-lg: 18px;
@@ -59,26 +77,5 @@ $font-family-body: $font-family-latin, $font-family-cjk, sans-serif;
 $font-family-mono: 'Fira Code', $font-family-cjk, monospace;
 
 $filter-blur: saturate(180%) blur(3px);
-```
-
-## 加载条
-
-```js
-import { createRouter } from 'vue-router';
-import { LoadingBar } from 'dsr-design';
-
-const router = createRouter();
-const loadingBar = new LoadingBar();
-
-router.beforeEach((to, from) => {
-  to.path !== from.path && loadingBar.start();
-});
-
-router.afterEach((to, from, failure) => {
-  if (!failure) {
-    to.path !== from.path && loadingBar.end();
-    // syntax highlight after route mounted
-    nextTick(() => Prism.highlightAll());
-  }
-});
+$filter-mica: saturate(200%) blur(24px);
 ```

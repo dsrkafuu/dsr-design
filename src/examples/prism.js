@@ -1,3 +1,4 @@
+// @ts-ignore
 /// <reference lib="WebWorker"/>
 var _self =
   typeof window !== 'undefined'

@@ -11,18 +11,18 @@ import buildStyles from '../../scripts/buildStyles.mjs?raw';
 <style scoped lang="scss">
 .tab {
   padding: $space-card;
-  border-radius: $corner-radius;
-  background-color: var(--color-bg);
-  margin-bottom: $space-card;
+  border-radius: $corner-radius-lg;
+  background-color: var(--color-backdrop);
+  backdrop-filter: $filter-mica;
   box-shadow: var(--box-shadow);
 
   pre {
     overflow-x: auto;
     margin: 0;
     padding: 10px 16px;
-    border-radius: $corner-radius;
+    border-radius: $corner-radius-sm;
     line-height: 1.5;
-    background-color: var(--color-body);
+    background-color: var(--color-backdrop-wrapper);
   }
 }
 </style>
