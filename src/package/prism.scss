@@ -1,6 +1,6 @@
 @import './variables';
 
-:root {
+@mixin dsr-design-prism-light {
   --color-prism-grey: #93a1a1;
   --color-prism-blue: #7c91bd;
   --color-prism-cyan: #8b81c3;
@@ -8,16 +8,26 @@
   --color-prism-green: #51a2a0;
   --color-prism-yellow: #ee7800;
   --color-prism-orange: #e45435;
+}
 
+@mixin dsr-design-prism-dark {
+  --color-prism-grey: #93a1a1;
+  --color-prism-blue: #95abd7;
+  --color-prism-cyan: #bab1df;
+  --color-prism-entity: #657b83;
+  --color-prism-green: #8ec298;
+  --color-prism-yellow: #e3c26a;
+  --color-prism-orange: #ee869a;
+}
+
+:root {
+  @include dsr-design-prism-light;
   @media (prefers-color-scheme: dark) {
-    --color-prism-grey: #93a1a1;
-    --color-prism-blue: #95abd7;
-    --color-prism-cyan: #bab1df;
-    --color-prism-entity: #657b83;
-    --color-prism-green: #8ec298;
-    --color-prism-yellow: #e3c26a;
-    --color-prism-orange: #ee869a;
+    @include dsr-design-prism-dark;
   }
+}
+body[data-theme='dark'] {
+  @include dsr-design-prism-dark;
 }
 
 .token {

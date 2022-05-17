@@ -4,7 +4,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "name": "dsr-design",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Design scheme of all DSR projects.",
   "author": "DSRKafuU <dsrkafuu@outlook.com> (https://dsrkafuu.net)",
   "license": "Apache-2.0",
@@ -16,9 +16,10 @@
   "scripts": {
     "script:genPackage": "node \"./scripts/genPackage.mjs\"",
     "script:buildStyles": "node \"./scripts/buildStyles.mjs\"",
+    "eslint": "eslint --ext \".jsx,.js,.tsx,.ts,.vue\" \"./src\"",
     "build:website": "vite build",
     "dev": "vite",
-    "build": "run-s script:genPackage script:buildStyles build:website"
+    "build": "run-s script:genPackage script:buildStyles eslint build:website"
   },
   "dependencies": {
     "markdown-it": "~13.0.1",

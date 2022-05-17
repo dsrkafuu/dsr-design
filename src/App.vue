@@ -14,7 +14,25 @@
           {{ route.meta.name }}
         </RouterLink>
       </nav>
-      <div class="menu-right">
+      <div class="menu menu-right">
+        <div class="menu-item menu-item-icon" @click="handleSwitchTheme">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            width="1.2em"
+            height="1.2em"
+            fill="currentColor"
+          >
+            <path
+              d="M504 256c0 137-111 248-248 248V8c137 0 248 111 248 248z"
+              style="opacity: 0.4"
+            />
+            <path
+              d="M256 8v496C119 504 8 393 8 256S119 8 256 8z"
+              style="opacity: 0.8"
+            />
+          </svg>
+        </div>
         <a
           class="menu-item"
           href="https://github.com/dsrkafuu/dsr-design"
@@ -73,6 +91,16 @@ const tabRoutes = computed(() => {
   }
   return ret;
 });
+
+// 切换主题
+const handleSwitchTheme = () => {
+  const theme = document.body.getAttribute('data-theme');
+  if (theme && theme === 'dark') {
+    document.body.removeAttribute('data-theme');
+  } else {
+    document.body.setAttribute('data-theme', 'dark');
+  }
+};
 </script>
 
 <style scoped lang="scss">
@@ -92,6 +120,7 @@ $responsive-width: 160px * 5 + 22px * 6 + 22px * 2;
   top: 0;
   z-index: 99;
   flex: 0 0 auto;
+  user-select: none;
 
   .nav {
     height: $header-height;
@@ -134,7 +163,12 @@ $responsive-width: 160px * 5 + 22px * 6 + 22px * 2;
     justify-content: flex-start;
     align-items: center;
 
+    &-right {
+      flex: 0 0 auto;
+    }
+
     &-item {
+      cursor: pointer;
       padding: 0 16px;
       display: inline-block;
       height: $header-height - 10px;
@@ -151,6 +185,13 @@ $responsive-width: 160px * 5 + 22px * 6 + 22px * 2;
 
       &:not(:first-child) {
         margin-left: 5px;
+      }
+
+      &-icon {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--color-font);
       }
     }
 

@@ -5,12 +5,12 @@
 
 html {
   height: 100%;
-  color: var(--color-font);
   overflow-y: auto;
   background-color: var(--color-body);
 }
 
 body {
+  color: var(--color-font);
   min-height: 100%;
   background: rgb(175, 191, 225);
   background: linear-gradient(

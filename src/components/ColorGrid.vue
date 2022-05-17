@@ -4,7 +4,7 @@
     @mouseenter="handleMouseEnter"
     @mouseleave="handleMouseLeave"
     :style="{
-      color: font,
+      color: font || 'var(--color-font)',
       backdropFilter: mica ? 'saturate(200%) blur(24px)' : 'none',
     }"
   >
@@ -26,7 +26,6 @@ const props = defineProps({
   },
   font: {
     type: String,
-    default: '#24292f',
   },
   code: {
     type: String,
