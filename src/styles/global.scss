@@ -7,17 +7,16 @@ html {
   height: 100%;
   overflow-y: auto;
   background-color: var(--color-body);
+  background-image: url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@11.0.0/opengraph/suzuran.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 body {
   color: var(--color-font);
   min-height: 100%;
-  background: rgb(175, 191, 225);
-  background: linear-gradient(
-    135deg,
-    rgba(175, 191, 225, 1) 40%,
-    rgba(187, 181, 219, 1) 100%
-  );
   display: flex;
   flex-direction: column;
 }
