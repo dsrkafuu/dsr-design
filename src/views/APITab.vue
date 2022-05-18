@@ -1,6 +1,6 @@
 <template>
   <div class="tab">
-    <article class="markdown" v-html="html"></article>
+    <article class="micadown" v-html="html"></article>
   </div>
 </template>
 
