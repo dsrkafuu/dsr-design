@@ -101,19 +101,11 @@ const miscs = [
 const emojis = [
   {
     type: 'Emoji',
-    code: 'Twemoji.parse("😀")',
-  },
-  {
-    type: '预连接',
-    code: '<link rel="preconnect" href="https://cdn.jsdelivr.net" />',
+    code: 'https://github.com/twitter/twemoji',
   },
   {
     type: '脚本 CDN 地址',
-    code: 'https://cdn.jsdelivr.net/npm/twemoji@13.1.0/dist/twemoji.min.js',
-  },
-  {
-    type: '资源 Base 路径',
-    code: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@13.1.0/assets/',
+    code: 'https://twemoji.maxcdn.com/v/14.0.2/twemoji.min.js',
   },
 ];
 </script>

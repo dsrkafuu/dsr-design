@@ -27,9 +27,7 @@ const mdit = markdownit({
   .use(markdownitFootnote);
 
 mdit.renderer.rules.emoji = (token, idx) => {
-  return twemoji.parse(token[idx].content, {
-    base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@13.1.0/assets/',
-  });
+  return twemoji.parse(token[idx].content);
 };
 
 const html = ref('');
