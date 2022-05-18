@@ -27,7 +27,7 @@ const dispCode = computed(() => {
 .js-grid {
   background-color: var(--color-backdrop);
   padding: $space-card;
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow-backdrop);
   border-radius: $corner-radius-lg;
   margin-bottom: $space-card;
   text-align: center;

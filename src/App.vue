@@ -115,7 +115,7 @@ $responsive-width: 160px * 5 + 22px * 6 + 22px * 2;
   text-align: center;
   background-color: var(--color-backdrop);
   backdrop-filter: $filter-mica;
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow-backdrop);
   position: sticky;
   top: 0;
   z-index: 99;
@@ -221,7 +221,7 @@ $responsive-width: 160px * 5 + 22px * 6 + 22px * 2;
   height: $footer-height;
   background-color: var(--color-backdrop);
   backdrop-filter: $filter-mica;
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow-backdrop);
   flex: 0 0 auto;
 
   &-inner {

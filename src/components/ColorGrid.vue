@@ -67,7 +67,7 @@ function handleMouseLeave() {
   overflow: hidden;
   z-index: 10;
   margin-bottom: 5px;
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow-backdrop);
 
   &-display {
     z-index: 20;

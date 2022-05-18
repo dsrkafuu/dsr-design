@@ -114,7 +114,7 @@ const emojis = [
 .tab {
   background-color: var(--color-backdrop);
   backdrop-filter: $filter-mica;
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow-backdrop);
   border-radius: $corner-radius-lg;
 }
 

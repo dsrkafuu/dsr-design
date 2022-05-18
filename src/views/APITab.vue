@@ -27,6 +27,6 @@ onMounted(() => {
   border-radius: $corner-radius-lg;
   background-color: var(--color-backdrop);
   backdrop-filter: $filter-mica;
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow-backdrop);
 }
 </style>
