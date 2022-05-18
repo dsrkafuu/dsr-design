@@ -1,7 +1,7 @@
 <template>
   <JSGrid code="import 'dsr-design/markdown'" />
   <div class="tab">
-    <article class="markdown" v-html="html"></article>
+    <article class="micadown" v-html="html"></article>
   </div>
 </template>
 

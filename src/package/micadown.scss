@@ -1,6 +1,7 @@
+// mica colors version of markdown.scss
 @import './variables';
 
-.markdown {
+.micadown {
   line-height: 1.5;
   font-size: $font-md;
   word-wrap: break-word;
@@ -93,7 +94,7 @@
     height: $highlight-size;
     padding: 0;
     margin: $space-para 0;
-    background-color: var(--color-border);
+    background-color: var(--color-backdrop-border);
     border: none;
   }
 
@@ -101,7 +102,7 @@
     word-wrap: normal;
     font-size: $font-sm;
     font-family: $font-family-mono;
-    background-color: var(--color-wrapper);
+    background-color: var(--color-backdrop-wrapper);
     border-radius: $corner-radius-sm;
     padding: 12px 15px;
     overflow-x: auto;
@@ -117,7 +118,7 @@
     font-family: $font-family-mono;
     padding: 2px 6px;
     color: inherit;
-    background-color: var(--color-wrapper);
+    background-color: var(--color-backdrop-wrapper);
     border-radius: $corner-radius-sm;
     hyphens: none;
 
@@ -153,7 +154,7 @@
     padding: 0 15px;
     color: inherit;
     font-size: inherit;
-    border-left: $highlight-size solid var(--color-border);
+    border-left: $highlight-size solid var(--color-backdrop-border);
 
     & > :first-child {
       margin-top: 0;
@@ -186,7 +187,7 @@
     td {
       background-color: transparent;
       padding: 4px 12px;
-      border: $border-size solid var(--color-border);
+      border: $border-size solid var(--color-backdrop-border);
     }
   }
 
