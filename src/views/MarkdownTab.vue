@@ -27,7 +27,10 @@ const mdit = markdownit({
   .use(markdownitFootnote);
 
 mdit.renderer.rules.emoji = (token, idx) => {
-  return twemoji.parse(token[idx].content);
+  return twemoji.parse(token[idx].content, {
+    folder: 'svg',
+    ext: '.svg',
+  });
 };
 
 const html = ref('');
