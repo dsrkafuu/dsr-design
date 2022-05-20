@@ -105,7 +105,11 @@ const emojis = [
   },
   {
     type: '脚本 CDN 地址',
-    code: 'https://twemoji.maxcdn.com/v/14.0.2/twemoji.min.js',
+    code: 'https://cdn.dsrkafuu.net/lib/twemoji.min.js',
+  },
+  {
+    type: '资源 CDN 地址',
+    code: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/<version>/',
   },
 ];
 </script>
