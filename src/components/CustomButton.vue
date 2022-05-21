@@ -4,7 +4,7 @@
   </button>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed } from 'vue';
 
 const emit = defineEmits(['click', 'delete']);
@@ -13,7 +13,7 @@ const props = defineProps({
   type: {
     type: String,
     default: '',
-    validator: (val) => {
+    validator: (val: string) => {
       return ['primary', 'success', 'danger', ''].indexOf(val) !== -1;
     },
   },

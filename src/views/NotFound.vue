@@ -2,8 +2,6 @@
   <div class="not-found">404 无法找到资源</div>
 </template>
 
-<script setup></script>
-
 <style lang="scss">
 .not-found {
   font-size: $font-lg;

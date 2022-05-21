@@ -16,7 +16,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, computed } from 'vue';
 
 const props = defineProps({
@@ -43,7 +43,7 @@ const hovered = ref(false);
 const displayStyle = computed(() => {
   return {
     backgroundColor: hovered.value
-      ? props.activeCode || props.code
+      ? 'props.activeCode' || props.code
       : props.code,
   };
 });

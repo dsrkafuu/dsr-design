@@ -5,7 +5,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import JSGrid from '../components/CodeGrid.vue';
 import prism from '../examples/prism.js?raw';
 </script>

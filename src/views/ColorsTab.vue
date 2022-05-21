@@ -12,12 +12,19 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed, ref } from 'vue';
 import JSGrid from '../components/CodeGrid.vue';
 import ColorGrid from '../components/ColorGrid.vue';
 
-const commons = [
+interface Color {
+  name: string;
+  code: string;
+  font?: string;
+  mica?: boolean;
+}
+
+const commons: Color[] = [
   { name: '主色', code: '#8aa2d3', font: '#fdfdfd' },
   { name: '主色 (高亮)', code: '#9db1da', font: '#fdfdfd' },
   { name: '成功色', code: '#77ccb0', font: '#fdfdfd' },
@@ -25,7 +32,7 @@ const commons = [
   { name: '危险色', code: '#d38aa2', font: '#fdfdfd' },
   { name: '危险色 (高亮)', code: '#da9db1', font: '#fdfdfd' },
 ];
-const light = [
+const light: Color[] = [
   ...commons,
   { name: '背景色', code: '#fafafa' },
   { name: '背景色 (高亮)', code: '#f0f0f0' },
@@ -39,7 +46,7 @@ const light = [
   { name: '字体色', code: '#24292f', font: '#fdfdfd' },
   { name: '字体反色', code: '#fdfdfd' },
 ];
-const dark = [
+const dark: Color[] = [
   ...commons,
   { name: '背景色', code: '#474b51' },
   { name: '背景色 (高亮)', code: '#585c61' },

@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import buildStyles from '../../scripts/buildStyles.mjs?raw';
 </script>
 

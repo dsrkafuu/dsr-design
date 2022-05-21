@@ -35,7 +35,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import JSGrid from '../components/CodeGrid.vue';
 
 const codes = ["import 'dsr-design/variables'", "import 'dsr-design/reset'"];

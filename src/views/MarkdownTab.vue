@@ -5,15 +5,14 @@
   </div>
 </template>
 
-<script setup>
-import { ref, onMounted } from 'vue';
+<script setup lang="ts">
 import JSGrid from '../components/CodeGrid.vue';
 import { twemoji } from '../global';
 import example from '../examples/example.md?raw';
 import markdownit from 'markdown-it';
 import markdownitEmoji from 'markdown-it-emoji';
 import markdownitSup from 'markdown-it-sup';
-import markdownitSub from 'markdown-it-sup';
+import markdownitSub from 'markdown-it-sub';
 import markdownitFootnote from 'markdown-it-footnote';
 
 const mdit = markdownit({
@@ -26,17 +25,17 @@ const mdit = markdownit({
   .use(markdownitSub)
   .use(markdownitFootnote);
 
-mdit.renderer.rules.emoji = (token, idx) => {
+mdit.renderer.rules.emoji = (
+  token: Array<{ content: string }>,
+  idx: number
+) => {
   return twemoji.parse(token[idx].content, {
     folder: 'svg',
     ext: '.svg',
   });
 };
 
-const html = ref('');
-onMounted(() => {
-  html.value = mdit.render(example);
-});
+const html = mdit.render(example);
 </script>
 
 <style scoped lang="scss">
