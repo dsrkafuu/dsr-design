@@ -7,6 +7,7 @@
     <meta name="description" content="Design scheme of all DSR projects." />
     <link rel="preconnect" href="https://cdn.dsrkafuu.net" />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://unpkg.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" crossorigin href="https://fonts.gstatic.com" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500&family=Noto+Sans+SC:wght@400;500&family=Noto+Sans+JP:wght@400;500&family=Fira+Code:wght@400;500" />
@@ -27,7 +28,12 @@
     <script defer src="https://cdn.dsrkafuu.net/lib/twemoji.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js"></script>
-    <script src="/src/index.tsx" type="module"></script>
+    <script defer src="https://unpkg.com/markdown-it@13.0.1/dist/markdown-it.min.js"></script>
+    <script defer src="https://unpkg.com/markdown-it-emoji@2.0.2/dist/markdown-it-emoji.min.js"></script>
+    <script defer src="https://unpkg.com/markdown-it-footnote@3.0.3/dist/markdown-it-footnote.min.js"></script>
+    <script defer src="https://unpkg.com/markdown-it-sub@1.0.0/dist/markdown-it-sub.min.js"></script>
+    <script defer src="https://unpkg.com/markdown-it-sup@1.0.0/dist/markdown-it-sup.min.js"></script>
+    <script type="module" src="/src/index.tsx"></script>
   </head>
   <body>
     <div id="app"></div>

@@ -1,21 +1,17 @@
 import styles from './Markdown.module.scss';
-import markdownit from 'markdown-it';
-import markdownitEmoji from 'markdown-it-emoji';
-import markdownitSup from 'markdown-it-sup';
-import markdownitSub from 'markdown-it-sub';
-import markdownitFootnote from 'markdown-it-footnote';
 import CodeGrid from '../components/CodeGrid';
 import article from '../examples/example.md?raw';
 
-const mdit = markdownit({
-  html: true,
-  xHtmlOut: true,
-  linkify: true,
-})
-  .use(markdownitEmoji)
-  .use(markdownitSup)
-  .use(markdownitSub)
-  .use(markdownitFootnote);
+const mdit = window
+  .markdownit({
+    html: true,
+    xHtmlOut: true,
+    linkify: true,
+  })
+  .use(window.markdownitEmoji)
+  .use(window.markdownitSup)
+  .use(window.markdownitSub)
+  .use(window.markdownitFootnote);
 mdit.renderer.rules.emoji = (
   token: Array<{ content: string }>,
   idx: number

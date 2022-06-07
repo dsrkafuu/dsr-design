@@ -16,7 +16,7 @@
   "scripts": {
     "script:genPackage": "node \"./scripts/genPackage.mjs\"",
     "script:buildStyles": "node \"./scripts/buildStyles.mjs\"",
-    "eslint": "eslint --ext \".jsx,.js,.tsx,.ts,.vue\" \"./src\"",
+    "eslint": "eslint --ext \".jsx,.js,.tsx,.ts\" \"./src\"",
     "tsc": "tsc",
     "build:website": "vite build",
     "dev": "vite",
@@ -24,11 +24,6 @@
   },
   "dependencies": {
     "clsx": "~1.1.1",
-    "markdown-it": "~13.0.1",
-    "markdown-it-emoji": "~2.0.2",
-    "markdown-it-footnote": "~3.0.3",
-    "markdown-it-sub": "~1.0.0",
-    "markdown-it-sup": "~1.0.0",
     "minimatch": "~5.1.0",
     "solid-app-router": "~0.3.3",
     "solid-js": "~1.4.3"

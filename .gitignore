@@ -2,7 +2,7 @@ node_modules/
 .DS_Store
 *.local
 
-package/**
+/package/
 dist/**
 dist-ssr/**
 stats.html
