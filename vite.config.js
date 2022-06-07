@@ -1,12 +1,12 @@
 import path from 'path';
 import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
+import solidPlugin from 'vite-plugin-solid';
 import { visualizer } from 'rollup-plugin-visualizer';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   base: process.env.VITE_BASE_URL || '/',
-  plugins: [vue()],
+  plugins: [solidPlugin()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -16,7 +16,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         includePaths: [path.resolve(__dirname, './node_modules')],
-        additionalData: `@import '@/package/variables';`,
+        additionalData: `@import '@/styles/variables';`,
       },
     },
   },

@@ -1,0 +1,7 @@
+.grid {
+  margin-bottom: $space-card;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,18 @@
+.jsGrid {
+  background-color: var(--color-backdrop);
+  padding: $space-card;
+  box-shadow: var(--box-shadow-backdrop);
+  border-radius: $corner-radius-lg;
+  margin-bottom: $space-card;
+  text-align: center;
+  backdrop-filter: $filter-mica;
+
+  &Inner {
+    overflow-x: auto;
+    margin: 0;
+    background-color: var(--color-backdrop-wrapper);
+    padding: 10px 16px;
+    border-radius: $corner-radius-sm;
+    line-height: 1.5;
+  }
+}

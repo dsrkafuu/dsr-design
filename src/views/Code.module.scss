@@ -1,0 +1,17 @@
+.section {
+  background-color: var(--color-backdrop);
+  backdrop-filter: $filter-mica;
+  box-shadow: var(--box-shadow-backdrop);
+  border-radius: $corner-radius-lg;
+  padding: $space-card;
+}
+
+.code {
+  display: block;
+  overflow-x: auto;
+  background-color: var(--color-backdrop-wrapper);
+  margin: 0;
+  padding: 12px 15px;
+  border-radius: $corner-radius-sm;
+  line-height: 1.5;
+}

@@ -1,21 +1,7 @@
-<template>
-  <JSGrid code="import 'dsr-design/color'" />
-  <div class="grids">
-    <ColorGrid
-      v-for="item of colors"
-      :key="item.name"
-      :text="item.name"
-      :code="item.code"
-      :font="item.font"
-      :mica="item.mica"
-    />
-  </div>
-</template>
-
-<script setup lang="ts">
-import { computed, ref } from 'vue';
-import JSGrid from '../components/CodeGrid.vue';
-import ColorGrid from '../components/ColorGrid.vue';
+import styles from './Colors.module.scss';
+import { createMemo, createSignal, For } from 'solid-js';
+import CodeGrid from '../components/CodeGrid';
+import ColorGrid from '../components/ColorGrid';
 
 interface Color {
   name: string;
@@ -37,7 +23,11 @@ const light: Color[] = [
   { name: '背景色', code: '#fafafa' },
   { name: '背景色 (高亮)', code: '#f0f0f0' },
   { name: 'Mica 背景色', code: 'rgba(255, 255, 255, 0.8)', mica: true },
-  { name: 'Mica 背景色 (高亮)', code: 'rgba(255, 255, 255, 0.65)', mica: true },
+  {
+    name: 'Mica 背景色 (高亮)',
+    code: 'rgba(255, 255, 255, 0.65)',
+    mica: true,
+  },
   { name: 'Mica 内背景色', code: 'rgba(255, 255, 255, 0.65)', mica: true },
   { name: 'Mica 边框色', code: '#bbbbbb' },
   { name: '主体色', code: '#f2f2f2' },
@@ -71,35 +61,53 @@ const dark: Color[] = [
   { name: '字体反色', code: '#24292f' },
 ];
 
-const theme = ref('light');
-// 监听 DOM 变化
-if (MutationObserver) {
-  const observer = new MutationObserver(() => {
-    if (document.body.getAttribute('data-theme') === 'dark') {
-      theme.value = 'dark';
-    } else {
-      theme.value = 'light';
-    }
-  });
-  observer.observe(document.body, { attributes: true });
-}
-// 监听浏览器设置变化
-if (window.matchMedia) {
-  const query = window.matchMedia('(prefers-color-scheme: dark)');
-  query.matches && (theme.value = 'dark');
-  query.addEventListener('change', () => {
-    if (document.body.hasAttribute('data-theme')) {
-      document.body.removeAttribute('data-theme');
-    }
-  });
-}
-const colors = computed(() => {
-  return theme.value === 'light' ? light : dark;
-});
-</script>
+function Colors() {
+  const [theme, setTheme] = createSignal('light');
+  // 监听浏览器设置变化
+  if (window.matchMedia) {
+    const query = window.matchMedia('(prefers-color-scheme: dark)');
+    query.matches && setTheme('dark');
+    query.addEventListener('change', () => {
+      if (document.body.hasAttribute('data-theme')) {
+        document.body.removeAttribute('data-theme');
+      }
+    });
+  }
+  // 监听 DOM 变化
+  if (window.MutationObserver) {
+    const observer = new MutationObserver(() => {
+      if (document.body.getAttribute('data-theme') === 'dark') {
+        setTheme('dark');
+      } else {
+        setTheme('light');
+      }
+    });
+    observer.observe(document.body, { attributes: true });
+  }
 
-<style scoped lang="scss">
-.grids {
-  border-radius: $corner-radius-lg;
+  // 当前色彩
+  const curColors = createMemo(() => {
+    return theme() === 'light' ? light : dark;
+  });
+
+  return (
+    <div>
+      <CodeGrid code="import 'dsr-design/color'" />
+      <div>
+        <For each={curColors()}>
+          {(color: Color) => (
+            <ColorGrid
+              class={styles.grid}
+              text={color.name}
+              color={color.code}
+              font={color.font}
+              mica={color.mica}
+            />
+          )}
+        </For>
+      </div>
+    </div>
+  );
 }
-</style>
+
+export default Colors;

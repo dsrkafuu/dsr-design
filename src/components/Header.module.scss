@@ -1,0 +1,116 @@
+.header {
+  width: 100%;
+  min-width: $responsive-width;
+  flex: 0 0 auto;
+  text-align: center;
+  background-color: var(--color-backdrop);
+  backdrop-filter: $filter-mica;
+  box-shadow: var(--box-shadow-backdrop);
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  flex: 0 0 auto;
+  user-select: none;
+}
+
+.nav {
+  height: $header-height;
+  margin: 0 auto;
+  width: $responsive-width;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  h1 {
+    margin: 0;
+    display: inline-block;
+    height: $header-height - 10px;
+    line-height: $header-height - 10px;
+    font-size: $font-xl;
+    font-weight: $bold-weight;
+    height: 100%;
+    transition: background-color $transition-fast ease;
+  }
+}
+
+.title {
+  text-decoration: none;
+  padding: 0 $space-card;
+  display: inline-block;
+  margin: 5px 0;
+  border-radius: $corner-radius-sm;
+
+  &:hover {
+    color: var(--color-font);
+    background-color: var(--color-backdrop-active);
+  }
+
+  &Inner {
+    margin: 0;
+    display: inline-block;
+    height: $header-height - 10px;
+    line-height: $header-height - 10px;
+    font-size: $font-xl;
+    font-weight: $bold-weight;
+    height: 100%;
+    transition: background-color $transition-fast ease;
+  }
+}
+
+.menu {
+  height: $header-height;
+  padding: 5px;
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  &_right {
+    flex: 0 0 auto;
+  }
+
+  &Item {
+    cursor: pointer;
+    padding: 0 16px;
+    display: inline-block;
+    height: $header-height - 10px;
+    line-height: $header-height - 10px;
+    text-decoration: none;
+    transition: background-color $transition-fast ease;
+    border-radius: $corner-radius-sm;
+    position: relative;
+
+    &:hover {
+      color: var(--color-font);
+      background-color: var(--color-backdrop-active);
+    }
+
+    &:not(:first-child) {
+      margin-left: 5px;
+    }
+
+    &_icon {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--color-font);
+      font-size: 18px;
+    }
+
+    &:global(.active) {
+      background-color: var(--color-backdrop-active);
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: $active-size;
+        border-radius: $active-radius;
+        background-color: var(--color-primary);
+      }
+    }
+  }
+}

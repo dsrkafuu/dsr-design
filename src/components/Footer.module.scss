@@ -1,0 +1,35 @@
+.footer {
+  font-size: $font-xs;
+  width: 100%;
+  min-width: $responsive-width;
+  flex: 0 0 auto;
+  height: $footer-height;
+  background-color: var(--color-backdrop);
+  backdrop-filter: $filter-mica;
+  box-shadow: var(--box-shadow-backdrop);
+  flex: 0 0 auto;
+
+  &Inner {
+    height: $footer-height;
+    width: $responsive-width;
+    margin: 0 auto;
+    padding: 0 $space-card;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &Link {
+    color: var(--color-primary);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &Icon {
+    display: block;
+    font-size: 20px;
+  }
+}

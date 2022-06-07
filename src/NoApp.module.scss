@@ -1,0 +1,29 @@
+.noApp {
+  padding: 22px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-backdrop);
+  backdrop-filter: $filter-mica;
+  box-shadow: var(--box-shadow-backdrop);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.minWidth,
+.curWidth {
+  font-size: 18px;
+}
+
+.minWidth {
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.curWidth {
+  margin-top: 5px;
+}
