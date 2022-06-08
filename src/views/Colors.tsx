@@ -1,5 +1,5 @@
 import styles from './Colors.module.scss';
-import { createMemo, createSignal, For } from 'solid-js';
+import { createMemo, createSignal, For, onMount } from 'solid-js';
 import CodeGrid from '../components/CodeGrid';
 import ColorGrid from '../components/ColorGrid';
 
@@ -62,6 +62,10 @@ const dark: Color[] = [
 ];
 
 function Colors() {
+  onMount(() => {
+    window.Prism.highlightAll();
+  });
+
   const [theme, setTheme] = createSignal('light');
   // 监听浏览器设置变化
   if (window.matchMedia) {

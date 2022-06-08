@@ -1,4 +1,5 @@
 import styles from './Markdown.module.scss';
+import { onMount } from 'solid-js';
 import CodeGrid from '../components/CodeGrid';
 import article from '../examples/example.md?raw';
 
@@ -24,6 +25,10 @@ mdit.renderer.rules.emoji = (
 const html = mdit.render(article);
 
 function Markdown() {
+  onMount(() => {
+    window.Prism.highlightAll();
+  });
+
   return (
     <div>
       <CodeGrid code="import 'dsr-design/markdown'" />

@@ -1,7 +1,7 @@
 import styles from './Resets.module.scss';
 import CodeGrid from '../components/CodeGrid';
+import { For, onMount } from 'solid-js';
 import clsx from 'clsx';
-import { For } from 'solid-js';
 
 const fonts = [
   {
@@ -79,6 +79,10 @@ const emojis = [
 ];
 
 function Resets() {
+  onMount(() => {
+    window.Prism.highlightAll();
+  });
+
   return (
     <div>
       <CodeGrid
