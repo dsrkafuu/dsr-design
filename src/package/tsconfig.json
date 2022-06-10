@@ -12,6 +12,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "declaration": true,
+    "sourceMap": false,
     "outDir": "../../package",
     "rootDir": "./"
   },
