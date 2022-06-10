@@ -31,7 +31,7 @@ scssFiles.forEach((file) => {
           const res = sass.compile(file, scssConfig);
           fse.outputFileSync(
             path.resolve(__dirname, `../package/css/${basename}.css`),
-            res.css + `\n/*# sourceMappingURL=${basename}.css.map */`
+            res.css // + `\n/*# sourceMappingURL=${basename}.css.map */`
           );
           // fse.outputFileSync(
           //   path.resolve(__dirname, `../package/css/${basename}.css.map`),
