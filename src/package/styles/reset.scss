@@ -1,4 +1,6 @@
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+@import './variables';
+
+/* normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
    ========================================================================== */
@@ -348,4 +350,47 @@ template {
 
 [hidden] {
   display: none;
+}
+
+/* Customs
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: $font-md;
+  font-family: $font-family-body;
+}
+
+pre,
+code {
+  font-size: $font-sm;
+  font-family: $font-family-mono;
+  color: inherit;
+  font-weight: inherit;
+  tab-size: 2;
+}
+
+strong,
+b,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $bold-weight;
+}
+
+img.emoji {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  margin: 0 0.05em 0 0.1em;
+  vertical-align: -0.1em;
 }

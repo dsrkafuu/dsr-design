@@ -16,7 +16,7 @@ const workers = [];
 
 // build scss
 const scssFiles = glob
-  .sync('src/package/*.scss')
+  .sync('src/package/styles/*.scss')
   .map((file) => path.resolve(__dirname, '../', file));
 const scssConfig = {
   sourceMap: false,
@@ -58,5 +58,5 @@ Promise.all(workers)
   .catch((e) => {
     console.log(chalk.red('failed to build some of scss files'));
     console.error(e);
-    process.exitCode = 1;
+    process.exit(1);
   });

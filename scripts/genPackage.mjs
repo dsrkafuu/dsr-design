@@ -32,9 +32,7 @@ for (const key of neededKeys) {
 }
 
 // ts lib related
-// outPackage.type = 'module';
-// outPackage.main = './lib/index.js';
-// outPackage.types = './lib/index.d.ts';
+outPackage.type = 'module';
 
 // write package.json
 fse.writeJSONSync(
@@ -56,5 +54,5 @@ Promise.all(workers)
   .catch((e) => {
     console.log(chalk.red('failed to generate package data'));
     console.error(e);
-    process.exitCode = 1;
+    process.exit(1);
   });

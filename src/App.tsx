@@ -4,7 +4,7 @@ import routes, { useRoute } from './routes';
 import NoApp from './NoApp';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import { throttle } from './utils';
+import { throttle } from './package/utils';
 import { useRoutes } from 'solid-app-router';
 
 function App() {
