@@ -40,13 +40,7 @@ pnpm add dsr-design
 ### Utils
 
 ```js
-import * as utils from 'dsr-design/utils';
-```
-
-### Hooks
-
-```js
-import * as hooks from 'dsr-design/hooks';
+import { cloneDeep, mergeDeep, debounce, throttle } from 'dsr-design/utils';
 ```
 
 ## Environment Variables
