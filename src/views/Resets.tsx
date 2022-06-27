@@ -70,11 +70,11 @@ const emojis = [
   },
   {
     type: '脚本 CDN 地址',
-    code: 'https://cdn.dsrkafuu.net/lib/twemoji.min.js',
+    code: 'https://cdn.jsdelivr.net/npm/twemoji@<version>/dist/twemoji.min.js',
   },
   {
     type: '资源 CDN 地址',
-    code: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/<version>/',
+    code: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@<version>/assets/',
   },
 ];
 

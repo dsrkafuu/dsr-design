@@ -18,6 +18,7 @@ mdit.renderer.rules.emoji = (
   idx: number
 ) => {
   return window.twemoji.parse(token[idx].content, {
+    base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/',
     folder: 'svg',
     ext: '.svg',
   });
